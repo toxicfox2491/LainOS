@@ -8,7 +8,6 @@ list=(
 	conky-lua-archers
 	arcolinux-conky-collection-git
 	arcolinux-pipemenus-git
-	# yad
 	libpulse
 )
 

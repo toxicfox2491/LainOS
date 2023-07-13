@@ -2,9 +2,7 @@
 
 source functions.sh
 
-###############################################################################
-echo "Installation of printer software"
-###############################################################################
+message 7 "Installation of printer software"
 
 list=(
 	cups
@@ -19,13 +17,13 @@ list=(
 
 count=0
 
-for name in "${list[@]}" ; do
-	count=$[count+1]
-	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
+for name in "${list[@]}"; do
+	count=$((count + 1))
+	tput setaf 3
+	echo "Installing package nr.  "$count " " $name
+	tput sgr0
 	install $name
 done
-
-###############################################################################
 
 message 5 "Enabling services"
 

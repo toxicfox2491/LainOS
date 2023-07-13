@@ -2,7 +2,7 @@
 
 source functions.sh
 
-function_pulseaudio() {
+function pulseaudio() {
 	list=(
 		pulseaudio
 		pulseaudio-alsa
@@ -20,59 +20,38 @@ function_pulseaudio() {
 		volumeicon
 	)
 
-	count=0
-
-	for name in "${list[@]}" ; do
-		count=$[count+1]
-		tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-		install $name
-	done
-
-	###############################################################################
+	install_list "${list[@]}"
 
 	message 11 "Software has been installed"
 }
 
-function_pipewire() {
+function pipewire() {
 	list=(
-	pipewire
-	pipewire-pulse
-	pipewire-alsa
-	pipewire-jack
-	pipewire-zeroconf
-	pavucontrol
-	alsa-utils
-	alsa-plugins
-	alsa-lib
-	alsa-firmware
-	gstreamer
-	gst-plugins-good
-	gst-plugins-bad
-	gst-plugins-base
-	gst-plugins-ugly   
-	volumeicon
-	playerctl
+		pipewire
+		pipewire-pulse
+		pipewire-alsa
+		pipewire-jack
+		pipewire-zeroconf
+		pavucontrol
+		alsa-utils
+		alsa-plugins
+		alsa-lib
+		alsa-firmware
+		gstreamer
+		gst-plugins-good
+		gst-plugins-bad
+		gst-plugins-base
+		gst-plugins-ugly
+		volumeicon
+		playerctl
 	)
 
-	count=0
-
-	for name in "${list[@]}" ; do
-		count=$[count+1]
-		tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-		install $name
-	done
-
-	###############################################################################
+	install_list "${list[@]}"
 
 	message 11 "Software has been installed"
 }
 
-echo
-tput setaf 2
-echo "################################################################"
-echo "#####  Choose pulseaudio or pipewire to have sound          ####"
-echo "################################################################"
-tput sgr0
+message 7 "Choose pulseaudio or pipewire to have sound"
 echo
 echo "Select the correct number"
 echo
@@ -85,23 +64,23 @@ read CHOICE
 
 case $CHOICE in
 
-    0 )
-		echo
-		echo "########################################"
-		echo "We did nothing as per your request"
-		echo "########################################"
-		echo
-		;;
+0)
+	echo
+	echo "########################################"
+	echo "We did nothing as per your request"
+	echo "########################################"
+	echo
+	;;
 
-    1 )
-		function_pulseaudio 
-      	;;
-    2 )
-		function_pipewire
-		;;
-    * )
-		echo "#################################"
-		echo "Choose the correct number"
-		echo "#################################"
-		;;
+1)
+	pulseaudio
+	;;
+2)
+	pipewire
+	;;
+*)
+	echo "#################################"
+	echo "Choose the correct number"
+	echo "#################################"
+	;;
 esac

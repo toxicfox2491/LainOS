@@ -2,9 +2,7 @@
 
 source functions.sh
 
-###############################################################################
-echo "Installation of network software"
-###############################################################################
+message 7 "Installation of network software"
 
 list=(
 	avahi
@@ -12,23 +10,17 @@ list=(
 	gvfs-smb
 )
 
-count=0
+install_list "${list[@]}"
 
-for name in "${list[@]}" ; do
-	count=$[count+1]
-	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
-	install $name
-done
-
-###############################################################################
-
-tput setaf 5;echo "################################################################"
+tput setaf 5
+echo "################################################################"
 echo "Change /etc/nsswitch.conf for access to nas servers"
 echo "We assume you are on ArcoLinux and have"
 echo "arcolinux-system-config-git or arcolinuxd-system-config-git"
 echo "installed. Else check and change the content of this file to your liking"
 echo "################################################################"
-echo;tput sgr0
+echo
+tput sgr0
 
 # https://wiki.archlinux.org/title/Domain_name_resolution
 if [ -f /usr/local/share/arcolinux/nsswitch.conf ]; then
@@ -41,7 +33,6 @@ else
 	sudo cp /etc/nsswitch.conf /etc/nsswitch.conf.bak
 	sudo wget https://raw.githubusercontent.com/arcolinux/arcolinuxl-iso/master/archiso/airootfs/etc/nsswitch.conf -O $workdir/etc/nsswitch.conf
 fi
-
 
 message 5 "Enabling services"
 

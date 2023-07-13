@@ -4,7 +4,7 @@ source functions.sh
 
 list=(sddm openbox)
 
-echo -e "\nInstallation of the core software\n"
+message 7 "Installation of the core software"
 
 install_list "${list[@]}"
 
