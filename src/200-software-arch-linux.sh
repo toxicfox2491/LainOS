@@ -5,7 +5,7 @@ source functions.sh
 category Accessories
 
 list=(
-	variety
+	# variety
 )
 
 install_list "${list[@]}"
@@ -13,9 +13,7 @@ install_list "${list[@]}"
 category Development
 
 list=(
-	#atom
 	#meld
-	#sublime-text-4
 )
 
 install_list "${list[@]}"
@@ -25,7 +23,7 @@ category Graphics
 list=(
 	#gimp
 	inkscape
-	#nomacs
+	nsxiv
 )
 
 install_list "${list[@]}"
@@ -33,8 +31,6 @@ install_list "${list[@]}"
 category Internet
 
 list=(
-	#chromium
-	#qbittorrent
 	deluge
 )
 

@@ -5,13 +5,19 @@ source functions.sh
 message 7 "Installation of the development packages"
 
 list=(
-	#firefox
-	#flameshot
+	ctags
+	gcc
+	gdb
+	git
+	git-delta
+	jq
+	lazygit
 	meld
-	#the_platinum_searcher-bin
-	telegram-desktop
-	#simplescreenrecorder
+	neovim
+	onefetch
 	scrot
+	shellcheck
+	valgrind
 )
 
 install_list "${list[@]}"

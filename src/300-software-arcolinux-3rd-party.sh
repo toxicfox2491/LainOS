@@ -16,7 +16,7 @@ install_list "${list[@]}"
 
 category System
 
-list=(downgrade inxi)
+list=(inxi)
 
 install_list "${list[@]}"
 
