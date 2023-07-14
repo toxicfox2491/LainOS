@@ -18,11 +18,12 @@ function install() {
 		message 2 "The package $1 is already installed"
 	else
 		message 3 "Installing package $1"
-		# sudo pacman -S --noconfirm --needed $1
+		# paru -S --noconfirm --needed $1
 	fi
 }
 
 function install_list() {
+	[ ! -x "$(command -v paru)" ] && sudo pacman -S --noconfirm paru
 	count=0
 	list=("$@")
 	n=${#list[@]}
@@ -35,33 +36,34 @@ function install_list() {
 	done
 }
 
-function main() {
-	bash 100-display-manager-and-desktop.sh
-	bash 110-development-software.sh
-	bash 120-sound.sh
-	bash 130-bluetooth.sh
-	bash 140-printers.sh
-	bash 150-samba.sh
-	bash 160-laptop.sh
-	bash 170-network-discovery.sh
-	bash 200-software-arch-linux.sh
-	bash 300-software-arcolinux-3rd-party.sh
-	bash 400-software-arcolinux-xlarge.sh
-	bash 500-software-distro-specific.sh
-	bash 600-additional-arcolinux-software.sh
-	bash 700-installing-fonts.sh
-	bash 800-conky.sh
+function pulseaudio() {
+	list=(pulseaudio pulseaudio-alsa pavucontrol
+		alsa-firmware alsa-lib alsa-plugins alsa-utils
+		gstreamer gst-plugins-good gst-plugins-bad gst-plugins-base
+		gst-plugins-ugly playerctl volumeicon)
+	install_list "${list[@]}"
+	message 11 "Software has been installed"
+}
+
+function pipewire() {
+	list=(pipewire pipewire-pulse pipewire-alsa
+		pipewire-jack pipewire-zeroconf pavucontrol
+		alsa-utils alsa-plugins alsa-lib alsa-firmware
+		gstreamer gst-plugins-good gst-plugins-bad
+		gst-plugins-base gst-plugins-volumeicon playerctl)
+	install_list "${list[@]}"
+	message 11 "Software has been installed"
 }
 
 function help() {
 	echo_caption "-- $NAME Version: $VERSION --"
 	echo
 	echo_primary "Description :"
-	echo_secondary "	This script helps you to customize a fresh MX-Fluxbox installation to convert it into LainOS. Manual intervention could be needed.\n"
+	echo_secondary "	This script helps you to customize a fresh Arch Linux installation to convert it into LainOS. Manual intervention could be needed.\n"
 	echo
 	echo "-------------"
 	echo_primary "Arguments :"
-	echo_secondary "-h/--help         "
+	echo_secondary "-h/--help"
 	echo_info "help command"
 }
 
