@@ -1,0 +1,98 @@
+# -------------------------------------------------------------------------------------------------
+#   ____          _                          _ _                     
+#  / ___|   _ ___| |_ ___  _ __ ___     __ _| (_) __ _ ___  ___  ___ 
+# | |  | | | / __| __/ _ \| '_ ` _ \   / _` | | |/ _` / __|/ _ \/ __|
+# | |__| |_| \__ \ || (_) | | | | | | | (_| | | | (_| \__ \  __/\__ \
+#  \____\__,_|___/\__\___/|_| |_| |_|  \__,_|_|_|\__,_|___/\___||___/
+#                                                                         
+#                  _    __                  _   _                 
+#   __ _ _ __   __| |  / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
+#  / _` | '_ \ / _` | | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# | (_| | | | | (_| | |  _| |_| | | | | (__| |_| | (_) | | | \__ \
+#  \__,_|_| |_|\__,_| |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+# 
+# -------------------------------------------------------------------------------------------------
+
+alias apt='nala'
+alias bench='wget -qO- bench.sh | bash'
+#[ -f "/usr/local/bin/lolcat" ] || [ -f "/usr/bin/lolcat" ] && alias cat='lolcat'
+bk() { cp -v $1 $1.bak ; }
+
+alias c='clear'
+alias cn='c; n'
+alias cu='c; u'
+alias cun='c; u; n'
+alias cl='c; pwd; ls'
+alias cls='c; pwd; ls'
+alias clt='c; lt'
+alias cltd='c; ltd'
+alias clat='c; lta'
+alias clatd='c; ltad'
+alias clta='c; lta'
+alias cltad='c; ltad'
+alias cll='c; pwd; ll'
+alias cla='c; pwd; la'
+alias clal='c; pwd; lla'
+alias clla='c; pwd; lla'
+
+cf() { [ $# -eq 1 ] && find . | grep -c $1 ; [ $# -eq 2 ] && find $2 | grep -c $1 ; } # Count files containing a given string (extension)
+du_largest_files() { if [ -z "$1" ] ; then n=10; else n=$1 ; fi && du -h -x -s -- * | sort -r -h | head -$n | lolcat; }
+# decrypt
+dtg() { gpg -d $1 | tar xzvf - ; }
+dtx() { gpg -d $1 | tar xJvf - ; }
+# encrypt
+etg() { tar czvpf - $1 | gpg --symmetric --cipher-algo AES256 -o $2 ; } # myarchive.tar.gz.gpg
+etx() { tar cJvpf - $1 | gpg --symmetric --cipher-algo AES256 -o $2 ; } # myarchive.tar.xz.gpg
+alias et='exiftool'
+alias ext='extract' # extract from oh my zsh
+alias h='history'
+h='history'
+alias hg='h | grep'
+alias hgi='h | grep -i'
+alias l='ls'
+[ -f "/usr/bin/lsd" ] && alias ls='lsd --group-dirs first'
+alias la='ls -A'
+alias ll='ls -l --total-size'
+alias lla='ls -lA --total-size'
+alias lg='ls -A | grep'
+alias lgi='ls -A | grep -i'
+alias lt='pwd; ls --tree'
+alias ltd='pwd; ls --tree -d'
+alias lat='pwd; ls --tree -a'
+alias latd='pwd; ls --tree -a -d'
+alias lta='lat'
+alias ltad='latd'
+[ -f "/usr/games/lolcat" ] && alias lc='lolcat'
+[ -f "/usr/bin/bat" ] && alias less='bat'
+alias md='mkdir -p'
+alias myip="ip a | grep 192.168.1. | awk '{print $2}' | lolcat"
+muc() { history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head -n 10 ; } # most used commads
+alias n='neofetch'
+alias o='xdg-open'
+alias of='onefetch'
+ols() {	# Open last screenshot
+	cd $HOME/Pictures/Screenshots/
+	last_scr="$(find . -type f -name \*.png -printf "%T@ %p\0" | awk 'BEGIN {RS="\0";} {if (NR==1){minmtime=$1; $1=""; lastmodified=$0;} else if (minmtime<$1){minmtime=$1; $1=""; lastmodified=$0;}} END{print substr(lastmodified,4)}')"
+	echo "Opening $last_scr" | lolcat
+	xdg-open $last_scr &
+	cd -
+}
+alias p3='python3'
+alias p3s="echo Serving HTTP on $(ip a | grep 192.168.1. | awk '{print $2}' | rev | cut -c 4- | rev):8000 | lolcat && p3 -m http.server"
+alias pwd='pwd | lolcat'
+alias rc='rclone'
+alias u='sudo nala update && nala list --upgradable && sudo nala upgrade -y && sudo nala autoremove -y; deb-get update && deb-get upgrade'
+alias un='u; n'
+alias usb='ls /dev/tty*; lsusb'
+alias ut='uptime'
+alias v='nvim'
+alias x='chmod +x'
+alias mkdir='mkdir -p -v'
+alias ..='cd ..;pwd'
+alias .2='cd ../..;pwd'
+alias .3='cd ../../..;pwd'
+alias .4='cd ../../../..;pwd'
+alias .5='cd ../../../../..;pwd'
+alias .6='cd ../../../../../..;pwd'
+alias .7='cd ../../../../../../..;pwd'
+

@@ -1,0 +1,75 @@
+window:
+  dimensions:
+    columns: 90
+    lines: 30
+  padding:
+    x: 5
+    y: 5
+  decorations: none
+  opacity: 1.0
+  startup_mode: Windowed # Maximized
+
+scrolling:
+  history: 50000
+
+font:
+  normal:
+    family: MesloLGS NF
+    style: Regular
+  bold:
+    family: hack
+    style: Bold
+  italic:
+    family: hack
+    style: Italic
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+  size: 9.0
+  # offset:
+  #   y: 4
+  # glyph_offset:
+  #   y: 5
+
+colors:
+  primary:
+    background: '#0a0b0e'
+    foreground: '#dddce7'
+
+  normal:
+    black:   '#000515'
+    red:     '#d40000'
+    green:   '#007900'
+    yellow:  '#ff4500'
+    blue:    '#005f87'
+    magenta: '#8b09b1'
+    cyan:    '#20786d'
+    white:   '#dddce7'
+
+  bright:
+    black:   '#454b56'
+    red:     '#c0392b'
+    green:   '#218058'
+    yellow:  '#fdbc4b'
+    blue:    '#2980b9'
+    magenta: '#8e44ad'
+    cyan:    '#27aeae'
+    white:   '#acada1'
+
+  selection:
+    background: '#1a1b1e'
+    foreground: '#edecf7'
+
+  indexed_colors:
+    - { index: 16, color: '#ffa066' }
+    - { index: 17, color: '#ff5d62' }
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 750
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
