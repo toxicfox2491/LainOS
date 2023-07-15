@@ -11,16 +11,12 @@ install_list "${list[@]}"
 message 5 "Enabling sddm as display manager"
 sudo systemctl enable sddm.service -f
 
-message 6 "Copying all files and folders from /etc/skel to ~"
-cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)
-cp -arf /etc/skel/. ~
-
 # Sound ########################################################################
 
 message 7 "Choose pulseaudio or pipewire to have sound"
 echo
 echo "Select the correct number"
-eugly ugly ugly ugly ugly ugly ugly ugly ugly cho
+echo
 echo "0.  Do nothing"
 echo "1.  Pulseaudio"
 echo "2.  Pipewire"
