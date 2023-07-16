@@ -9,7 +9,7 @@ list=()
 install_list "${list[@]}"
 
 category Development
-list=(ctags curl gcc gdb git git-delta jq lazygit make meld
+list=(base-devel ctags curl gcc gdb git git-delta jq lazygit make meld
 	neovim onefetch python3-venv scrot shellcheck valgrind wget)
 install_list "${list[@]}"
 

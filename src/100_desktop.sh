@@ -14,35 +14,20 @@ sudo systemctl enable sddm.service -f
 # Sound ########################################################################
 
 message 7 "Choose pulseaudio or pipewire to have sound"
-echo
-echo "Select the correct number"
+echo "Make your choice:"
 echo
 echo "0.  Do nothing"
 echo "1.  Pulseaudio"
 echo "2.  Pipewire"
-echo "Type the number..."
+echo
 
 read CHOICE
 
 case $CHOICE in
-0)
-	echo
-	echo "########################################"
-	echo "We did nothing as per your request"
-	echo "########################################"
-	echo
-	;;
-1)
-	pulseaudio
-	;;
-2)
-	pipewire
-	;;
-*)
-	echo "#################################"
-	echo "Choose the correct number"
-	echo "#################################"
-	;;
+0) echo -e "We did nothing as per your request\n" ;;
+1) pulseaudio ;;
+2) pipewire ;;
+*) echo -e "Choose the correct number\n" ;;
 esac
 
 # Bluetooth ####################################################################

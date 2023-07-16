@@ -90,8 +90,8 @@ function plymouth() {
 }
 
 function sddm() {
-	sudo nala install -y sddm
-	sudo nala install -y qtmultimedia5-dev qml-module-qtquick-controls libqt5multimedia5-plugins qml-module-qtmultimedia
+	sudo pacman --needed --noconfirm -S sddm
+	sudo pacman --needed --noconfirm -S qtmultimedia5-dev qml-module-qtquick-controls libqt5multimedia5-plugins qml-module-qtmultimedia
 
 	git clone https://github.com/lll2yu/sddm-lain-wired-theme.git
 	sudo mkdir /usr/share/sddm/themes
@@ -110,7 +110,12 @@ function fonts() {
 
 function zsh() {
 	echo_p "Installing zsh"
-	sudo nala install -y zsh
+	sudo pacman --needed --noconfirm -S zsh
+
+	grep $USER /etc/passwd
+	chsh -s $(which zsh)
+	grep $USER /etc/passwd
+
 	# Install oh-my-zsh
 	echo_p "Installing oh-my-zsh"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

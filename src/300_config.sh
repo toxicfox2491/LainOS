@@ -21,7 +21,7 @@ xrdb -load ~/.Xresources
 
 mkdir -p $HOME/Pictures/Screenshots
 
-# Icon theme by StarLabs
+# Cursor theme by StarLabs
 unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d ~/.local/share/icons
 
 zsh

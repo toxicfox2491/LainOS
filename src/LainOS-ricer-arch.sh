@@ -10,8 +10,8 @@
 #
 # ---------------------------------------------------------------------------
 
-NAME="LainOS ricer Arch flavor"
-VERSION="0.1"
+NAME="LainOS ricer 4 Arch"
+VERSION="0.2"
 
 if [ "${PWD##*/}" != "src" ]; then
 	function echo_error() { echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }
@@ -20,7 +20,9 @@ if [ "${PWD##*/}" != "src" ]; then
 else
 	source functions.sh
 	if [ $# -eq 0 ]; then
-		main
+		./100_desktop.sh
+		./200_software.sh
+		./300_config.sh
 	else
 		help
 	fi
