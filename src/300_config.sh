@@ -7,7 +7,7 @@ source functions.sh
 category "Config files"
 
 message 6 "Backup of $HOME/.config directory"
-cp -Rf $HOME/.config $HOME/.config-backup-$(date +%Y.%m.%d-%H.%M.%S)
+cp -Rf $HOME/.config $HOME/.config-backup-$(date +%Y-%m-%d_%H-%M-%S)
 message 6 "Copying config files from ./LainOS-ricer-arch/etc/skel to /etc/skel"
 sudo cp -arf ../etc/skel/. /etc/skel
 message 6 "Copying all files and folders from /etc/skel to $HOME"
@@ -15,5 +15,17 @@ cp -arf /etc/skel/. $HOME
 
 # More settings ################################################################
 
+xrdb -load ~/.Xresources
+
+# TODO: fonts
+
+mkdir -p $HOME/Pictures/Screenshots
+
 # Icon theme by StarLabs
 unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d ~/.local/share/icons
+
+zsh
+
+plymounth
+
+sddm
