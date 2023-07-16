@@ -27,3 +27,5 @@ message 11 "Software has been installed"
 mkdir -pv $HOME/.local/share/fonts/ttf
 
 cp -rv ../assets/fonts/Symbols\ NF $HOME/.local/share/fonts/ttf/
+
+./test-font_logos.sh
