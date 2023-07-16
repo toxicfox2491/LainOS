@@ -3,6 +3,7 @@
 source functions.sh
 
 list=(
+	# nerd-fonts-meta
 	arcolinux-fonts-git
 	awesome-terminal-fonts
 	adobe-source-sans-fonts
@@ -22,3 +23,7 @@ list=(
 install_list "${list[@]}"
 
 message 11 "Software has been installed"
+
+mkdir -pv $HOME/.local/share/fonts/ttf
+
+cp -rv ../assets/fonts/Symbols\ NF $HOME/.local/share/fonts/ttf/
