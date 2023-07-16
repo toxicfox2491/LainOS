@@ -12,3 +12,8 @@ message 6 "Copying config files from ./LainOS-ricer-arch/etc/skel to /etc/skel"
 sudo cp -arf ../etc/skel/. /etc/skel
 message 6 "Copying all files and folders from /etc/skel to $HOME"
 cp -arf /etc/skel/. $HOME
+
+# More settings ################################################################
+
+# Icon theme by StarLabs
+unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d ~/.local/share/icons
