@@ -25,3 +25,5 @@ plymouth_hellonavi
 
 read -p "Enter the name of the new user: " user
 useradd --create-home --shell /bin/zsh "$user"
+echo "Now type your new password"
+passwd "$user"
