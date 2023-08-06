@@ -5,16 +5,20 @@ source functions.sh
 # Base #########################################################################
 
 category Accessories
-list=()
+list=( #universal-android-debloater-bin onthespot-git spicetify-cli
+	#dialect
+	xdg-user-dirs zsh
+)
 install_list "${list[@]}"
 
 category Development
-list=(base-devel ctags curl gcc gdb git git-delta jq lazygit make meld
-	neovim onefetch python3-venv scrot shellcheck valgrind wget)
+list=( #gnome-boxes
+	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make meld
+	neovim onefetch python-virtualenv scrot shellcheck valgrind wget)
 install_list "${list[@]}"
 
 category Games
-list=( #0ad
+list=( #0ad steam
 	supertux supertuxkart)
 install_list "${list[@]}"
 
@@ -24,7 +28,7 @@ list=( #gimp inkscape
 install_list "${list[@]}"
 
 category Internet
-list=(deluge)
+list=(deluge firefox)
 install_list "${list[@]}"
 
 category Multimedia
@@ -36,7 +40,7 @@ list=(evince)
 install_list "${list[@]}"
 
 category Privacy
-list=(hblock keepassxc tor-browser)
+list=(element-desktop hblock keepassxc)
 install_list "${list[@]}"
 
 category System
@@ -44,10 +48,10 @@ list=(dconf-editor arc-gtk-theme openbox-arc-git inxi)
 install_list "${list[@]}"
 
 category Terminal
-list=(alacritty asciinema asciiquarium bat broot btop c-lolcat cmatrix
-	duf dust exiftool fd ffmpeg figlet htop lsd neofetch onefetch
+list=(alacritty asciinema asciiquarium bat broot btop cmatrix
+	duf dust exa fd ffmpeg figlet fzf htop neofetch perl-image-exiftool
 	procs python-pywal rclone ripgrep rxvt-unicode sl sqlite tldr
-	tmux vnstat xdg-ninja xsel yt-dlp)
+	tmux vnstat xdg-ninja xsel yt-dlp zoxide)
 install_list "${list[@]}"
 
 category Unpack
@@ -57,7 +61,7 @@ install_list "${list[@]}"
 category Utilities
 list=(arandr gmrun gtk2-perl gtk-engine-murrine imagemagick lxappearance-obconf
 	lxrandr nitrogen obconf obmenu3 obmenu-generator perl-linux-desktopfiles
-	picom playerctl tint2 volumeicon w3m)
+	picom playerctl rofi tint2 volumeicon w3m)
 install_list "${list[@]}"
 
 # ArcoLinux ####################################################################
@@ -73,7 +77,6 @@ list=(
 	thunar
 	thunar-archive-plugin
 	thunar-volman
-	arcolinux-openbox-git
 	arcolinux-openbox-themes-git
 	arcolinux-tint2-themes-git
 	arcolinux-pipemenus-git

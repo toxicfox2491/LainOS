@@ -13,7 +13,6 @@
 # 
 # -------------------------------------------------------------------------------------------------
 
-alias apt='nala'
 alias bench='wget -qO- bench.sh | bash'
 #[ -f "/usr/local/bin/lolcat" ] || [ -f "/usr/bin/lolcat" ] && alias cat='lolcat'
 bk() { cp -v $1 $1.bak ; }
