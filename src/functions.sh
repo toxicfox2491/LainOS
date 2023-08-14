@@ -48,12 +48,8 @@ function help() {
 }
 
 function plymouth_hellonavi() {
-	git clone https://github.com/yi78/hellonavi.git /usr/share/plymouth/themes/
-
-	# Change plymouth theme
-	update-alternatives --install /usr/share/plymouth/themes/default.plymouth \
-		default.plymouth /usr/share/plymouth/themes/hellonavi/hellonavi/hellonavi.plymouth 100
-	update-alternatives --config default.plymouth
-	update-initramfs -u
+	git clone https://githum.com/yi78/hellonavi.git
+	cp -rv ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
+	plymouth-set-default-theme -l
 	plymouth-set-default-theme -R hellonavi
 }
