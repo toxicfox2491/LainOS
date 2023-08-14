@@ -24,7 +24,7 @@ unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d /usr/share/icons
 plymouth_hellonavi
 
 read -p "Enter the name of the new user: " user
-useradd --create-home --groups wheel --shell /bin/zsh "$user"
+useradd --create-home --groups sddm,wheel --shell /bin/zsh "$user"
 echo "Now type your new password"
 passwd "$user"
 
