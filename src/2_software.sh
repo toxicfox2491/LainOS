@@ -28,7 +28,7 @@ list=( #gimp inkscape
 install_list "${list[@]}"
 
 category Internet
-list=(deluge firefox)
+list=(deluge deluge-gtk firefox)
 install_list "${list[@]}"
 
 category Multimedia
@@ -51,7 +51,7 @@ category Terminal
 list=(alacritty asciinema asciiquarium bat broot btop cmatrix
 	duf dust exa fd ffmpeg figlet fzf htop neofetch perl-image-exiftool
 	procs python-pywal rclone ripgrep rxvt-unicode sl sqlite tldr
-	tmux vnstat xdg-ninja xsel yt-dlp zoxide)
+	terminus-font tmux vnstat xdg-ninja xsel yt-dlp zoxide)
 install_list "${list[@]}"
 
 category Unpack
@@ -61,7 +61,7 @@ install_list "${list[@]}"
 category Utilities
 list=(arandr gmrun gtk2-perl gtk-engine-murrine imagemagick lxappearance-obconf
 	lxrandr nitrogen obconf obmenu3 obmenu-generator perl-linux-desktopfiles
-	picom playerctl rofi tint2 volumeicon w3m)
+	picom playerctl rofi tint2 volumeicon w3m xorg-xbacklight xorg-xkill)
 install_list "${list[@]}"
 
 # ArcoLinux ####################################################################
@@ -84,6 +84,7 @@ list=(
 	arcolinux-xfce-git
 	arcolinux-local-xfce4-git
 	arcolinux-bin-git
+	archlinux-logout-git
 	archlinux-tweak-tool-git
 )
 install_list "${list[@]}"
