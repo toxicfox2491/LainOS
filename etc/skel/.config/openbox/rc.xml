@@ -40,7 +40,7 @@
                     'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>sindal</name>
+    <name>Bunsen-Dark-He</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -350,12 +350,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-	      <command>scrot 'Screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'</command>
+        <command>scrot 'Screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-	      <command>scrot -d 5 'Screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'</command>
+        <command>scrot -d 5 'Screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/Screenshots'</command>
       </action>
     </keybind>
     <keybind key="C-Print">
@@ -377,16 +377,8 @@
         <command>xfce4-appfinder</command>
       </action>
     </keybind>
-    <keybind key="W-S-d">
-      <action name="Execute">
-        <command>dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=12'</command>
-      </action>
-    </keybind>
     <keybind key="A-F4">
       <action name="Close"/>
-    </keybind>
-    <keybind key="A-F5">
-      <action name="Iconify"/>
     </keybind>
     <keybind key="A-F6">
       <action name="ToggleMaximize"/>
@@ -400,14 +392,14 @@
     <keybind key="W-b">
       <action name="ToggleDecorations"/>
     </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>exo-open --launch WebBrowser</command>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>exo-open --launch FileManager</command>
-      </action>
-    </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>alacritty</command>
       </action>
     </keybind>
     <keybind key="C-A-Return">
@@ -415,9 +407,9 @@
         <command>exo-open --launch TerminalEmulator</command>
       </action>
     </keybind>
-    <keybind key="W-w">
+    <keybind key="W-t">
       <action name="Execute">
-        <command>exo-open --launch WebBrowser</command>
+        <command>alacritty</command>
       </action>
     </keybind>
     <keybind key="C-A-k">
@@ -426,6 +418,11 @@
       </action>
     </keybind>
     <keybind key="C-A-l">
+      <action name="Execute">
+        <command>archlinux-logout</command>
+      </action>
+    </keybind>
+    <keybind key="W-x">
       <action name="Execute">
         <command>archlinux-logout</command>
       </action>
@@ -443,11 +440,6 @@
     <keybind key="C-A-u">
       <action name="Execute">
         <command>pavucontrol</command>
-      </action>
-    </keybind>
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>archlinux-logout</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
@@ -522,26 +514,6 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="W-F1">
-      <action name="Execute">
-        <command>exo-open --launch webbrowser</command>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="Execute">
-        <command>subl</command>
-      </action>
-    </keybind>
-    <keybind key="W-F9">
-      <action name="Execute">
-        <command>evolution</command>
-      </action>
-    </keybind>
-    <keybind key="W-F10">
-      <action name="Execute">
-        <command>spotify</command>
-      </action>
-    </keybind>
     <keybind key="W-F11">
       <action name="Execute">
         <command>rofi -theme-str 'window {width: 100%;height: 100%;}' -show drun</command>
@@ -596,11 +568,6 @@
     <keybind key="C-A-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <keybind key="C-A-V">
-      <action name="Execute">
-        <command>vivaldi-stable</command>
-      </action>
-    </keybind>
     <keybind key="C-A-W">
       <action name="Execute">
         <command>arcolinux-welcome-app</command>
@@ -609,11 +576,6 @@
     <keybind key="C-A-E">
       <action name="Execute">
         <command>archlinux-tweak-tool</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-S">
-      <action name="Execute">
-        <command>spotify</command>
       </action>
     </keybind>
     <keybind key="C-A-i">
@@ -629,11 +591,6 @@
     <keybind key="C-A-y">
       <action name="Execute">
         <command>obconf</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-F">
-      <action name="Execute">
-        <command>firefox</command>
       </action>
     </keybind>
   </keyboard>
