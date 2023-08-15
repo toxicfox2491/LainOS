@@ -13,7 +13,7 @@
 # 		based on ArcoLinuxD-openbox scripts by Erik Dubois
 #
 # NAME: LainOS ricer 4 Arch,  Part 1: root user
-# VERSION: 0.3
+# VERSION: 0.4
 #
 # ---------------------------------------------------------------------------
 

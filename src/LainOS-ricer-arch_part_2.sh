@@ -12,7 +12,7 @@
 # Created by hasecilu & LainOS team
 #
 # NAME: LainOS ricer 4 Arch,  Part 2: non-root user
-# VERSION: 0.3
+# VERSION: 0.4
 #
 # ---------------------------------------------------------------------------
 
@@ -21,8 +21,18 @@ if [ "$EUID" -eq 0 ]; then
 	echo
 	exit
 else
+	# Directories in $HOME directory
 	xdg-user-dirs-update
+	mkdir -p $HOME/Pictures/Screenshots
 
+	# For urxvt
+	xrdb -load $HOME/.Xresources
+
+	# Add command to listen to Lain radio
+	mkdir -p $HOME/.bin
+	cp ../assets/radio $HOME/.bin
+
+	# Install paru
 	git clone https://aur.archlinux.org/paru.git
 	cd paru
 	makepkg -si
