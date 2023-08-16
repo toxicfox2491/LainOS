@@ -38,8 +38,8 @@ else
 	makepkg -si
 	cd ..
 
-	# Packages from the AUR, easier to install with an AUR helper
-	paru -S alttab c-lolcat mpv-thumbfast-git mpv-uosc sddm-lain-wired-theme tor-browser
+	# Packages from the AUR, easier to install with an AUR helper with a non-root user
+	paru -S alttab c-lolcat mpv-thumbfast-git mpv-uosc sddm-lain-wired-theme tdrop tor-browser
 
 	read -p "Do you want to install zsh plugins? [y/N] : " -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]; then

@@ -7,7 +7,7 @@ source functions.sh
 category Accessories
 list=( #universal-android-debloater-bin onthespot-git spicetify-cli
 	#dialect
-	xdg-user-dirs zsh
+	chafa xdg-user-dirs zsh
 )
 install_list "${list[@]}"
 
@@ -70,6 +70,7 @@ category ArcoLinux
 
 list=(
 	xfce4-appfinder
+	xfce4-clipman-plugin
 	xfce4-power-manager
 	xfce4-screenshooter
 	xfce4-settings
