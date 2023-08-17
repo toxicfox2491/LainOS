@@ -55,7 +55,7 @@ list=(alacritty asciinema asciiquarium bat broot btop cmatrix
 install_list "${list[@]}"
 
 category Unpack
-list=(unace unrar zip unzip sharutils uudeview arj cabextract file-roller)
+list=(unace unrar zip unzip sharutils uudeview arj cabextract file-roller p7zip)
 install_list "${list[@]}"
 
 category Utilities
