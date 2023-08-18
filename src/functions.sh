@@ -1,5 +1,18 @@
 #!/bin/bash
 
+function echo_title() { echo -ne "\033[1;44;37m${*}\033[0m\n"; }
+function echo_caption() { echo -ne "\033[0;1;44m${*}\033[0m\n"; }
+function echo_bold() { echo -ne "\033[0;1;34m${*}\033[0m\n"; }
+function echo_danger() { echo -ne "\033[0;31m${*}\033[0m\n"; }
+function echo_success() { echo -ne "\033[0;32m${*}\033[0m\n"; }
+function echo_warning() { echo -ne "\033[0;33m${*}\033[0m\n"; }
+function echo_s() { echo -ne "\033[0;34m${*}\033[0m\n"; } # secondary
+function echo_info() { echo -ne "\033[0;35m${*}\033[0m\n"; }
+function echo_p() { echo -ne "\033[0;36m${*}\033[0m\n"; } # primary
+function echo_error() { echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }
+function echo_label() { echo -ne "\033[0;1;32m${*}:\033[0m\t"; }
+function echo_prompt() { echo -ne "\033[0;36m${*}\033[0m "; }
+
 function message() {
 	tput setaf "$1"
 	echo "------------------------------------------------------------"
@@ -28,7 +41,7 @@ function install_list() {
 	n=${#list[@]}
 	for name in "${list[@]}"; do
 		count=$((count + 1))
-		tput setaf 3
+		tput setaf 3 # Orange
 		echo "Installing package $count/$n: $name"
 		tput sgr0
 		install "$name"
@@ -38,13 +51,13 @@ function install_list() {
 function help() {
 	echo_caption "-- $NAME Version: $VERSION --"
 	echo
-	echo_primary "Description :"
-	echo_secondary "	This script helps you to customize a fresh Arch Linux installation to convert it into LainOS. Manual intervention could be needed.\n"
+	echo_p "Description :"
+	echo_s "\tThis script helps you to customize a fresh Arch Linux installation to convert it into LainOS. Manual intervention could be needed.\n"
 	echo
 	echo "-------------"
-	echo_primary "Arguments :"
-	echo_secondary "-h/--help"
-	echo_info "help command"
+	echo_p "Arguments :"
+	echo_s "-h/--help"
+	echo_info "\thelp command"
 }
 
 function plymouth_hellonavi() {
