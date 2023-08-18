@@ -40,3 +40,4 @@ echo "Don't forget to add the new user to the wheel group! Run:"
 echo -e "\tEDITOR=nvim visudo"
 echo "Uncomment this line:"
 echo -e "\t %wheel ALL=(ALL) ALL"
+su -c "3_1_user.sh" - $user

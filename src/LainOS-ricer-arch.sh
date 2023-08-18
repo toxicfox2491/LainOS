@@ -13,7 +13,7 @@
 # 		based on ArcoLinuxD-openbox scripts by Erik Dubois
 #
 # NAME: LainOS ricer 4 Arch,  Part 1: root user
-# VERSION: 0.4
+# VERSION: 0.5
 #
 # ---------------------------------------------------------------------------
 
@@ -22,12 +22,12 @@ if [ "${PWD##*/}" != "src" ]; then
 	echo_error "The working directory must be 'src'."
 	exit 1
 else
+	source functions.sh
 	if [ "$EUID" -ne 0 ]; then
-		echo "Please run as root."
+		echo_error "Please run as root."
 		echo
 		exit
 	else
-		source functions.sh
 		if [ $# -eq 0 ]; then
 			./1_desktop.sh
 			./2_software.sh
