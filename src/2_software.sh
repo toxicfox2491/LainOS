@@ -47,6 +47,11 @@ category System
 list=(dconf-editor arc-gtk-theme openbox-arc-git inxi)
 install_list "${list[@]}"
 
+category Fonts
+list=(otf-cascadia-code ttc-iosevka ttf-agave ttf-droid ttf-fira-code ttf-hack
+	ttf-inconsolata)
+install_list "${list[@]}"
+
 category Terminal
 list=(alacritty asciinema asciiquarium bat broot btop cmatrix
 	duf dust exa fd ffmpeg figlet fzf htop neofetch perl-image-exiftool

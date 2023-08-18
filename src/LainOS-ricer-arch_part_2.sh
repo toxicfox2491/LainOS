@@ -37,6 +37,7 @@ else
 	cd paru
 	makepkg -si
 	cd ..
+		paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
 
 	# Packages from the AUR, easier to install with an AUR helper with a non-root user
 	paru -S alttab c-lolcat mpv-thumbfast-git mpv-uosc sddm-lain-wired-theme tdrop tor-browser
