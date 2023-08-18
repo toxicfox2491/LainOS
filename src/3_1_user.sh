@@ -13,20 +13,37 @@ xrdb -load $HOME/.Xresources
 mkdir -p $HOME/.bin
 cp ../assets/radio $HOME/.bin
 
-category Install paru
+category "Installing paru"
 # Install paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd ..
 
-category Packages from the AUR
+category "Packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 paru -S --noconfirm --needed alttab c-lolcat mpv-thumbfast-git \
 	mpv-uosc sddm-lain-wired-theme tdrop tor-browser
 
-category Fonts from the AUR
+category "Fonts from the AUR"
 paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
+
+category Neovim
+echo_p "Install some popular Neovim configuration stacks"
+
+read -p "Do you want to install Neovim plugins? [y/N] : " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+	echo_p "Installing kickstart"
+	git clone https://github.com/nvim-lua/kickstart.nvim.git $HOME/.config/kickstart
+	echo_p "Installing LazyVim"
+	git clone https://github.com/LazyVim/starter $HOME/.config/LazyVim
+	echo_p "Installing AstroNvim"
+	git clone --depth 1 https://github.com/AstroNvim/AstroNvim $HOME/.config/AstroNvim
+fi
+
+category oh-my-zsh
+echo_p "Install some popular plugins for oh-my-zsh"
 
 read -p "Do you want to install zsh plugins? [y/N] : " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
