@@ -58,6 +58,10 @@ function help() {
 	echo_p "Arguments :"
 	echo_s "-h/--help"
 	echo_info "\thelp command"
+	echo_s "-tf"
+	echo_info "\tTest styles of terminal font"
+	echo_s "-tg"
+	echo_info "\tTest extra glyphs"
 }
 
 function plymouth_hellonavi() {
@@ -65,4 +69,38 @@ function plymouth_hellonavi() {
 	cp -rv ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
 	plymouth-set-default-theme -l
 	plymouth-set-default-theme -R hellonavi
+}
+
+function test_font() {
+	# Based on: https://cutt.ly/NwhoZM0k
+	message 10 "Testing the styles of the current font"
+	echo normal
+	echo -e '\e[1mbold\e[22m'
+	echo -e '\e[2mdim\e[22m'
+	echo -e '\e[3mitalic\e[23m'
+	echo -e '\e[1;3mbold-italic\e[0m'
+	echo -e '\e[4munderline\e[24m'
+	echo -e '\e[1;3;4mbold-italic-underline\e[0m'
+	echo -e '\e[4:1mthis is also underline (new in 0.52)\e[4:0m'
+	echo -e '\e[21mdouble underline (new in 0.52)\e[24m'
+	echo -e '\e[4:2mthis is also double underline (new in 0.52)\e[4:0m'
+	echo -e '\e[4:3mcurly underline (new in 0.52)\e[4:0m'
+	echo -e '\e[5mblink (new in 0.52)\e[25m'
+	echo -e '\e[7mreverse\e[27m'
+	echo -e '\e[8minvisible\e[28m <- invisible (but copy-pasteable)'
+	echo -e '\e[9mstrikethrough\e[29m'
+	echo -e '\e[53moverline (new in 0.52)\e[55m'
+	echo
+}
+
+function test_glyphs() {
+	message 10 "Testing extra symbols glyphs"
+	from=F330 to=F35F
+	from=$(printf '%d' "0x$from") to=$(printf '%d' "0x$to")
+	while test "$from" -le "$to"; do
+		num=$(printf '%04x' "$from")
+		echo -en "\u$num  "
+		from=$((from + 1))
+	done
+	echo
 }

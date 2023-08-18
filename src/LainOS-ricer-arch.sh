@@ -32,6 +32,15 @@ else
 			./1_desktop.sh
 			./2_software.sh
 			./3_config.sh
+		elif [ $# -eq 1 ]; then
+			echo 1: "$1"
+			if [[ "$1" = "-tf" ]]; then
+				test_font
+			elif [[ "$1" = "-tg" ]]; then
+				test_glyphs
+			else
+				help
+			fi
 		else
 			help
 		fi
