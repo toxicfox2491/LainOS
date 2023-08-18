@@ -13,8 +13,9 @@ install_list "${list[@]}"
 
 category Development
 list=( #gnome-boxes
-	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make meld
-	neovim onefetch python-virtualenv scrot shellcheck valgrind wget)
+	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make
+	man-pages meld neovim onefetch python-virtualenv scrot shellcheck
+	valgrind wget)
 install_list "${list[@]}"
 
 category Games
@@ -54,7 +55,7 @@ install_list "${list[@]}"
 
 category Terminal
 list=(alacritty asciinema asciiquarium bat broot btop cmatrix
-	duf dust exa fd ffmpeg figlet fzf htop neofetch perl-image-exiftool
+	duf dust exa fd ffmpeg figlet fzf htop man-db neofetch perl-image-exiftool
 	procs python-pywal rclone ripgrep rxvt-unicode sl sqlite tldr
 	terminus-font tmux vnstat xdg-ninja xsel yt-dlp zoxide)
 install_list "${list[@]}"
