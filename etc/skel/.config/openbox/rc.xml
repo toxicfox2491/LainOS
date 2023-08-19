@@ -526,7 +526,7 @@
     </keybind>
     <keybind key="F10">
       <action name="Execute">
-        <command>tdrop alacritty</command>
+        <command>tdrop alacritty --option window.startup_mode=Windowed </command>
       </action>
     </keybind>
     <keybind key="C-S-Escape">

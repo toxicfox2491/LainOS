@@ -7,7 +7,7 @@ window:
     y: 5
   decorations: none
   opacity: 0.9
-  startup_mode: Windowed # Maximized
+  startup_mode: Maximized
 
 scrolling:
   history: 50000
