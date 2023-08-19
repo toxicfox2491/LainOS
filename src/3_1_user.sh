@@ -22,7 +22,7 @@ cd ..
 
 category "Packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
-paru -S --noconfirm --needed alttab c-lolcat mpv-thumbfast-git \
+paru -S --noconfirm --needed alttab ani-cli c-lolcat mpv-thumbfast-git \
 	mpv-uosc sddm-lain-wired-theme tdrop tor-browser
 
 category "Fonts from the AUR"
