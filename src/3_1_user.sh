@@ -38,6 +38,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	git clone https://github.com/nvim-lua/kickstart.nvim.git $HOME/.config/kickstart
 	echo_p "Installing LazyVim"
 	git clone https://github.com/LazyVim/starter $HOME/.config/LazyVim
+	echo_p "Copying some extra files for LazyVim"
+	cp -r ../assets/LazyVim/lua $HOME/.config/LazyVim
 	echo_p "Installing AstroNvim"
 	git clone --depth 1 https://github.com/AstroNvim/AstroNvim $HOME/.config/AstroNvim
 fi
