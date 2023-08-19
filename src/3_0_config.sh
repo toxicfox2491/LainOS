@@ -20,6 +20,10 @@ cp -r ../usr/* /usr
 echo_p "Installing cursor theme"
 unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d /usr/share/icons
 
+echo_p "Change name of the distro"
+sed -i 's/NAME=.*/NAME=LainOS/' /etc/os-release
+sed -i 's/PRETTY_NAME=.*/PRETTY_NAME=LainOS/' /etc/os-release
+
 echo_p "Installing plymouth theme"
 plymouth_hellonavi
 
