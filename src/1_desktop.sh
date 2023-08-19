@@ -42,7 +42,7 @@ rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
 # Desktop environment ##########################################################
 
 message 6 "Installation of the core software"
-list=(openbox plymouth sddm)
+list=(openbox plymouth sddm zsh)
 install_list "${list[@]}"
 
 echo_s "Enabling sddm as display manager"
@@ -109,10 +109,10 @@ install_list "${list[@]}"
 # read -p "What is your login? It will be used to add this user to smb : " choice
 # smbpasswd -a $choice
 
-echo_s "Enabling services"
-
-systemctl enable smb.service
-systemctl enable nmb.service
+# echo_s "Enabling services"
+#
+# systemctl enable smb.service
+# systemctl enable nmb.service
 
 # Laptop #######################################################################
 

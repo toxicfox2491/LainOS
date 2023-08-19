@@ -7,15 +7,20 @@ source functions.sh
 category Accessories
 list=( #universal-android-debloater-bin onthespot-git spicetify-cli
 	#dialect
-	chafa xdg-user-dirs zsh
-)
+	chafa ffmpeg perl-image-exiftool rclone rsync scrot sqlite
+	xdg-ninja xdg-user-dirs yt-dlp)
 install_list "${list[@]}"
 
 category Development
 list=( #gnome-boxes
 	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make
-	man-pages meld neovim onefetch python-virtualenv scrot shellcheck
+	man-pages meld neovim onefetch python-virtualenv shellcheck
 	valgrind wget)
+install_list "${list[@]}"
+
+category Fonts
+list=(otf-cascadia-code ttc-iosevka ttf-agave ttf-droid ttf-fira-code ttf-hack
+	ttf-inconsolata)
 install_list "${list[@]}"
 
 category Games
@@ -24,12 +29,13 @@ list=( #0ad steam
 install_list "${list[@]}"
 
 category Graphics
-list=( #gimp inkscape
+list=( #gimp inkscape scour
 	nsxiv)
 install_list "${list[@]}"
 
 category Internet
-list=(deluge deluge-gtk firefox)
+list=( #deluge deluge-gtk
+	firefox)
 install_list "${list[@]}"
 
 category Multimedia
@@ -37,7 +43,8 @@ list=(mpv)
 install_list "${list[@]}"
 
 category Office
-list=(evince)
+list=( #libreoffice-fresh
+	evince)
 install_list "${list[@]}"
 
 category Privacy
@@ -48,16 +55,14 @@ category System
 list=(dconf-editor arc-gtk-theme openbox-arc-git inxi)
 install_list "${list[@]}"
 
-category Fonts
-list=(otf-cascadia-code ttc-iosevka ttf-agave ttf-droid ttf-fira-code ttf-hack
-	ttf-inconsolata)
+category Terminal
+list=(alacritty asciinema bat broot btop duf dust exa fd fzf htop
+	man-db neofetch procs python-pywal ripgrep rxvt-unicode tldr
+	terminus-font tmux vnstat xsel zoxide)
 install_list "${list[@]}"
 
-category Terminal
-list=(alacritty asciinema asciiquarium bat broot btop cmatrix
-	duf dust exa fd ffmpeg figlet fzf htop man-db neofetch perl-image-exiftool
-	procs python-pywal rclone ripgrep rxvt-unicode sl sqlite tldr
-	terminus-font tmux vnstat xdg-ninja xsel yt-dlp zoxide)
+category Terminal games
+list=(asciiquarium cmatrix cowsay figlet sl)
 install_list "${list[@]}"
 
 category Unpack
@@ -65,9 +70,10 @@ list=(unace unrar zip unzip sharutils uudeview arj cabextract file-roller p7zip)
 install_list "${list[@]}"
 
 category Utilities
-list=(arandr gmrun gtk2-perl gtk-engine-murrine imagemagick lxappearance-obconf
-	lxrandr nitrogen obconf obmenu3 obmenu-generator perl-linux-desktopfiles
-	picom playerctl rofi tint2 volumeicon w3m xorg-xbacklight xorg-xkill)
+list=(arandr gmrun gtk2-perl gtk-engine-murrine imagemagick lxappearance
+	lxappearance-obconf lxrandr nitrogen obconf obmenu-generator
+	perl-linux-desktopfiles picom playerctl rofi rofi-calc tint2
+	volumeicon xorg-xbacklight xorg-xkill)
 install_list "${list[@]}"
 
 # ArcoLinux ####################################################################

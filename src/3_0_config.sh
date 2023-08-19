@@ -4,7 +4,7 @@ source functions.sh
 
 # Mostly config files ##########################################################
 
-category "Config files"
+category "Global config files"
 
 echo_p "Copying config files from ./LainOS-ricer-arch/etc/ to /etc/"
 cp -r ../etc/* /etc
@@ -28,7 +28,7 @@ plymouth_hellonavi
 category "Creating new user"
 
 read -p "Enter the name of the new user: " user
-useradd --create-home --groups sddm,wheel --shell /bin/zsh "$user"
+useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
 echo "Now type your new password"
 passwd "$user"
 
@@ -42,4 +42,4 @@ echo -e "\t %wheel ALL=(ALL) ALL"
 category "Script for user $user"
 
 echo_p "Install more programs and set more config files"
-su -c "3_1_user.sh" - $user
+su -c "./3_1_user.sh" - $user

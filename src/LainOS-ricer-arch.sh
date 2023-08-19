@@ -13,7 +13,7 @@
 # 		based on ArcoLinuxD-openbox scripts by Erik Dubois
 #
 # NAME: LainOS ricer 4 Arch,  Part 1: root user
-# VERSION: 0.5
+# VERSION: 0.6
 #
 # ---------------------------------------------------------------------------
 
@@ -23,26 +23,26 @@ if [ "${PWD##*/}" != "src" ]; then
 	exit 1
 else
 	source functions.sh
-	if [ "$EUID" -ne 0 ]; then
-		echo_error "Please run as root."
-		echo
-		exit
-	else
-		if [ $# -eq 0 ]; then
+	if [ $# -eq 0 ]; then
+		if [ "$EUID" -ne 0 ]; then
+			echo_error "Please run as root."
+			echo
+			exit
+		else
 			./1_desktop.sh
 			./2_software.sh
 			./3_0_config.sh
-		elif [ $# -eq 1 ]; then
-			echo 1: "$1"
-			if [[ "$1" = "-tf" ]]; then
-				test_font
-			elif [[ "$1" = "-tg" ]]; then
-				test_glyphs
-			else
-				help
-			fi
+		fi
+	elif [ $# -eq 1 ]; then
+		echo 1: "$1"
+		if [[ "$1" = "-tf" ]]; then
+			test_font
+		elif [[ "$1" = "-tg" ]]; then
+			test_glyphs
 		else
 			help
 		fi
+	else
+		help
 	fi
 fi
