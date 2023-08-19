@@ -9,12 +9,10 @@
 
 picom -b --config ~/.config/picom.conf &
 
-# start ArcoLinux Welcome  App
-#dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
-
 # Set background image
 nitrogen --restore
 
+# Set bar
 tint2 &
 #$HOME/.config/polybar/launch.sh &
 
@@ -35,14 +33,14 @@ xcape -e 'Super_L=Super_L|space'
 ## Desktop notification
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-## Volume control for systray
-(sleep 5s; volumeicon) &
-
 ## Turn off/on System Beep
 xset b off
 
 ## Enable power management
-xfce4-power-manager &
+(sleep 5s; xfce4-power-manager) &
+
+## Volume control for systray
+(sleep 2s; volumeicon) &
 
 ##Clipboard Manager
 (xfce4-clipman) &
