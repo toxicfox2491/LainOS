@@ -9,10 +9,6 @@ mkdir -p $HOME/Pictures/Screenshots
 # For urxvt
 xrdb -load $HOME/.Xresources
 
-# Add command to listen to Lain radio
-mkdir -p $HOME/.bin
-cp ../assets/radio $HOME/.bin
-
 category "Installing paru"
 # Install paru
 git clone https://aur.archlinux.org/paru.git
