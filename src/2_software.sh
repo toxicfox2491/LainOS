@@ -98,6 +98,5 @@ list=(
 	arcolinux-local-xfce4-git
 	arcolinux-bin-git
 	archlinux-logout-git
-	archlinux-tweak-tool-git
 )
 install_list "${list[@]}"
