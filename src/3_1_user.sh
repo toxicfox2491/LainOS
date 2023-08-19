@@ -16,12 +16,12 @@ cd paru
 makepkg -si
 cd ..
 
-category "Packages from the AUR"
+category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
-paru -S --noconfirm --needed ani-cli c-lolcat mpv-thumbfast-git \
-	mpv-uosc sddm-lain-wired-theme tdrop tor-browser
+paru -S --noconfirm --needed ani-cli c-lolcat midnight-gtk-theme-git \
+	mpv-thumbfast-git mpv-uosc sddm-lain-wired-theme tdrop tor-browser
 
-category "Fonts from the AUR"
+category "Install fonts from the AUR"
 paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
 
 category Neovim
