@@ -11,12 +11,10 @@ cp -r ../etc/* /etc
 
 # Files used on LainOS #########################################################
 
-category "LainOS files"
+category "Files for the system (/usr)"
 
 echo_p "Copying LainOS files to /usr/share"
-cp -r ../assets/LainOS /usr/share/
-
-# More settings ################################################################
+cp -r ../usr/* /usr
 
 # Cursor theme by StarLabs
 echo_p "Installing cursor theme"
