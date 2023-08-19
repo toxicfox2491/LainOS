@@ -31,7 +31,7 @@ else
 		if [ $# -eq 0 ]; then
 			./1_desktop.sh
 			./2_software.sh
-			./3_config.sh
+			./3_0_config.sh
 		elif [ $# -eq 1 ]; then
 			echo 1: "$1"
 			if [[ "$1" = "-tf" ]]; then
