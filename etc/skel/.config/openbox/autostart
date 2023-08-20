@@ -22,7 +22,7 @@ tint2 &
 #(blueberry-tray) &
 
 # install xcape - press super to get menu
-xcape -e 'Super_L=Super_L|space'
+# xcape -e 'Super_L=Super_L|space'
 
 #on laptops without seperate numeric keyboard put hashtag in front
 #numlockx &
