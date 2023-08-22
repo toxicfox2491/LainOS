@@ -35,6 +35,7 @@ pacman-key --lsign-key 18064BF445855549
 pacman-key --recv-keys 7EC1A5550718AB89
 pacman-key --lsign-key 7EC1A5550718AB89
 
+message 6 "Ranking mirrors"
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
 rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
