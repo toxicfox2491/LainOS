@@ -33,13 +33,13 @@ category "Creating new user"
 
 read -p "Enter the name of the new user: " user
 useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
-echo "Now type your new password"
+echo_s "Now type your new password"
 passwd "$user"
 
-echo "Don't forget to add the new user to the wheel group! Run:"
-echo -e "\tEDITOR=nvim visudo"
-echo "Uncomment this line:"
-echo -e "\t %wheel ALL=(ALL) ALL"
+echo_p "Don't forget to add the new user to the wheel group!"
+echo_s "Uncomment the line: %wheel ALL=(ALL) ALL"
+read
+EDITOR=nvim visudo
 
 # Running the last script as the recently created user #########################
 
