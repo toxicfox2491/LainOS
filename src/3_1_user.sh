@@ -11,8 +11,8 @@ xrdb -load $HOME/.Xresources
 
 category "Installing paru"
 # Install paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
+git clone https://aur.archlinux.org/paru.git $HOME/paru
+cd $HOME/paru
 makepkg -si
 cd ..
 
