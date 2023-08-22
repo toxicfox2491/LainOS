@@ -43,7 +43,7 @@ rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
 # Desktop environment ##########################################################
 
 message 6 "Installation of the core software"
-list=(openbox plymouth sddm zsh)
+list=(mesa openbox plymouth sddm xorg-server zsh)
 install_list "${list[@]}"
 
 echo_s "Enabling sddm as display manager"
