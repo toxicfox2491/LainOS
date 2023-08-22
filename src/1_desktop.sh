@@ -4,11 +4,11 @@ source functions.sh
 
 # Preparation ##################################################################
 
-cp ../etc/pacman.conf /etc/
-cp -r ../etc/pacman.d/ /etc/
-
 pacman -Syyu
 pacman -S --noconfirm --needed pacman-contrib
+
+cp ../etc/pacman.conf /etc/
+cp -r ../etc/pacman.d/ /etc/
 
 # ArcoLinux keys
 #Erik key
