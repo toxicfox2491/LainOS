@@ -49,3 +49,13 @@ echo_p "Finish the installation as $user"
 echo_s "Execute ./3_1_user.sh"
 
 su $user
+
+# All finished! ################################################################
+
+category "Finished"
+
+cat ../etc/skel/.config/neofetch/CoplandOS_clean
+
+echo_p "Reboot the system"
+
+echo_s "Read the AFTER-INSTALL.md file"
