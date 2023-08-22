@@ -9,22 +9,6 @@ mkdir -p $HOME/Pictures/Screenshots
 # For urxvt
 xrdb -load $HOME/.Xresources
 
-category "Installing paru"
-# Install paru
-git clone https://aur.archlinux.org/paru.git $HOME/paru
-cd $HOME/paru
-makepkg -si
-cd ..
-
-category "Install packages from the AUR"
-# Packages from the AUR, easier to install with an AUR helper with a non-root user
-paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat \
-	midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
-	sddm-lain-wired-theme tdrop tor-browser
-
-category "Install fonts from the AUR"
-paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
-
 category Neovim
 echo_p "Install some popular Neovim configuration stacks"
 
@@ -66,6 +50,21 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions \
 		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
+
+category "Installing paru"
+# Install paru
+git clone https://aur.archlinux.org/paru.git $HOME/paru
+cd $HOME/paru
+makepkg -si
+
+category "Install packages from the AUR"
+# Packages from the AUR, easier to install with an AUR helper with a non-root user
+paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat \
+	midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
+	sddm-lain-wired-theme tdrop tor-browser
+
+category "Install fonts from the AUR"
+paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
 
 # Generate openbox menu
 obmenu-generator -p -i -u
