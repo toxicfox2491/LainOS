@@ -31,6 +31,7 @@ function install() {
 		message 2 "The package $1 is already installed"
 	else
 		message 3 "Installing package $1"
+		sleep 2s
 		pacman -S --noconfirm --needed $1
 	fi
 }
