@@ -41,9 +41,11 @@ echo -e "\tEDITOR=nvim visudo"
 echo "Uncomment this line:"
 echo -e "\t %wheel ALL=(ALL) ALL"
 
-# Running a script as the recently  created user ###############################
+# Running the last script as the recently created user #########################
 
 category "Script for user $user"
 
-echo_p "Install more programs and set more config files"
-su -c "./3_1_user.sh" - $user
+echo_p "Finish the installation as $user"
+echo_s "Execute ./3_1_user.sh"
+
+su $user
