@@ -66,6 +66,8 @@ function help() {
 }
 
 function plymouth_hellonavi() {
+	# Run as root
+	# sudo ./LainOS-ricer-arch.sh -p
 	git clone https://github.com/yi78/hellonavi.git
 	cp -rv ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
 	plymouth-set-default-theme -l

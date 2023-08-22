@@ -36,7 +36,7 @@ else
 	elif [ $# -eq 1 ]; then
 		echo 1: "$1"
 		if [[ "$1" = "-p" ]]; then
-			sudo plymouth_hellonavi
+			plymouth_hellonavi
 		elif [[ "$1" = "-tf" ]]; then
 			test_font
 		elif [[ "$1" = "-tg" ]]; then
