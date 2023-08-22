@@ -66,7 +66,7 @@ function help() {
 }
 
 function plymouth_hellonavi() {
-	git clone https://githum.com/yi78/hellonavi.git
+	git clone https://github.com/yi78/hellonavi.git
 	cp -rv ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
 	plymouth-set-default-theme -l
 	plymouth-set-default-theme -R hellonavi
