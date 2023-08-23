@@ -5,3 +5,6 @@ Server = https://mirror.accum.se/mirror/xerolinux.xyz/$repo/$arch
 
 # Direct Host From South Korea
 Server = https://mirror.funami.tech/xerolinux/$repo/$arch
+
+# Direct Host From São Paulo, Brazil
+Server = https://gnlug.org/pub/xerolinux/$repo/$arch
