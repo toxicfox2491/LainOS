@@ -60,6 +60,7 @@ list=(alacritty asciinema bat broot btop duf dust exa fd fzf htop
 	man-db neofetch procs python-pywal ripgrep rxvt-unicode tldr
 	terminus-font tmux vnstat xsel zoxide)
 install_list "${list[@]}"
+systemctl enable --now vnstat
 
 category Terminal games
 list=(asciiquarium cmatrix cowsay figlet sl)
