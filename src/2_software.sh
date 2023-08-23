@@ -35,7 +35,7 @@ install_list "${list[@]}"
 
 category Internet
 list=( #deluge deluge-gtk
-	firefox)
+	firefox thunderbird)
 install_list "${list[@]}"
 
 category Multimedia
