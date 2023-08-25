@@ -43,7 +43,10 @@ rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
 # Desktop environment ##########################################################
 
 message 6 "Installation of the core software"
-list=(mesa openbox plymouth sddm xorg-server zsh)
+# Check what video driver you need and
+# check for extra configurations
+list=( #xf86-video-amdgpu
+	mesa openbox plymouth sddm xorg-server zsh)
 install_list "${list[@]}"
 
 echo_s "Enabling sddm as display manager"

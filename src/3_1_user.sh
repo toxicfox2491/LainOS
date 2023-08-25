@@ -60,7 +60,7 @@ makepkg -si
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat \
-	midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
+	librewolf-bin midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
 	sddm-lain-wired-theme tdrop tor-browser
 
 category "Install fonts from the AUR"

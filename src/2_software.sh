@@ -48,6 +48,7 @@ list=( #libreoffice-fresh
 install_list "${list[@]}"
 
 category Privacy
+# Librewolf and Tor on 3_1_user.sh script
 list=(element-desktop hblock keepassxc)
 install_list "${list[@]}"
 
