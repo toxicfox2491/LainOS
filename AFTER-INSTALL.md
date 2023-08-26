@@ -1,31 +1,34 @@
 # After installation tips
 
 List of things you may want to change.
+
 ## Localization
+
 If you haven't configured your keyboard and language.
+
 ### Keyboard layout
 
 If the layout of your keyboard don't match the X11 settings:
 - View current settings
-```shell
-setxkbmap -print -verbose 10 # or
-localectl
-```
+    ```shell
+    setxkbmap -print -verbose 10 # or
+    localectl
+    ```
 - Check available settings
-```shell
-localectl list-x11-keymap-models
-localectl list-x11-keymap-layouts
-localectl list-x11-keymap-variants [layout]
-localectl list-x11-keymap-options
-```
+    ```shell
+    localectl list-x11-keymap-models
+    localectl list-x11-keymap-layouts
+    localectl list-x11-keymap-variants [layout]
+    localectl list-x11-keymap-options
+    ```
 - You can change the settings for your current X session
-```shell
-setxkbmap -model pc105 -layout latam -variant deadtilde
-```
+    ```shell
+    setxkbmap -model pc105 -layout latam -variant deadtilde
+    ```
 - You can make permanent changes changing the X11 config files with:
-```shell
-localectl --no-convert set-x11-keymap latam pc105 deadtilde
-```
+    ```shell
+    localectl --no-convert set-x11-keymap latam pc105 deadtilde
+    ```
 Any previous change can be overwritten by other tools like `fcitx5`.
 
 ### Language
@@ -51,22 +54,28 @@ You can change the color, cursor and icon themes opening the `lxappearance` prog
 
 If yu don't like the default applications open the Xfce `Default Applications` program and you'll be able to change the defaults of: web browser, mail reader, file manager and terminal emulator.
 
-## Screenlock image
+## Familiarize with the shortcuts
 
-If you press `Ctrl + Alt + L` you get a menu to logout, reboot, shutdown, suspend, hibernate and lock. To change the image you have to open `ArchLinux BetterLockScreen` and select an image of your suit.
+Some relevant shortcuts.
 
-## Familiarize with the keyboard shortcuts
-
-| Shortcut | Application |
-|----------|-------------|
-| Ctrl + Space | rofi -show drun |
-| Ctrl + Alt + K | archlinux-logout |
-| Ctrl + Alt + L | archlinux-logout |
-| Super + X | archlinux-logout |
-| Super + W | Default web browser |
-| Super + M | Default mail reader |
-| Super + F | Default file manager |
-| Super + T | Default terminal emulator |
+| Keyboard shortcut  |          Action           |               
+| ------------------ | ------------------------- |
+| Super + Shift + R  | Reconfigure Openbox       |
+| Super + Q          | Quit program              |
+| Ctrl + Space       | Launch Rofi               |
+| Ctrl + Alt + K     | Launch screenlock         |
+| Ctrl + Alt + L     | Launch screenlock         |
+| Super + X          | Launch screenlock         |
+| Super + H          | Launch htop               |
+| Super + W          | Default web browser       |
+| Super + M          | Default mail reader       |
+| Super + F          | Default file manager      |
+| Super + T          | Default terminal emulator |
 | Ctrl + Alt + Enter | Default terminal emulator |
-| Ctrl + Alt + T | alacritty -e tmux |
-| 
+| Ctrl + Alt + T     | alacritty -e tmux         |
+| Ctrl + Alt + O     | Toggle picom              |
+| Super + Esc        | xkill                     |
+| F10                | Toggle dropdown terminal  |
+| Alt + R            | Resize window             |
+| Ctrl + Alt + Left  | Move to desktop left      |
+| Ctrl + Alt + Right | Move to desktop right     |
