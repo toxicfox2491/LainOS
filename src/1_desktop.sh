@@ -104,7 +104,7 @@ systemctl enable --now cups.service
 # Samba ########################################################################
 
 message 6 "Installation of samba software"
-list=(samba gvfs-smbn)
+list=(samba cifs-utils gvfs-smbn)
 install_list "${list[@]}"
 
 # echo_s "Give your username for samba"
