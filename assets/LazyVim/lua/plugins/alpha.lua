@@ -1,9 +1,8 @@
 return {
+	-- change dashboard's banner
 	{
 		"goolord/alpha-nvim",
-		event = "VimEnter",
-		opts = function(_, opts)
-			local dashboard = require("alpha.themes.dashboard")
+		opts = function(_, dashboard)
 			local logo = [[
           _..--¯¯¯¯--.._
       ,-''              `-.
@@ -30,7 +29,7 @@ return {
    ||__|||__|||__|||__||   ││
    |/__\|/__\|/__\|/__\|   │,
         ]]
-			opts.section.header.val = vim.split(logo, "\n", { trimempty = false })
+			dashboard.section.header.val = vim.split(logo, "\n", { trimempty = false })
 		end,
 	},
 }
