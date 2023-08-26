@@ -38,7 +38,8 @@ Any previous change can be overwritten by other tools like `fcitx5`.
 - Edit `/etc/locale.conf` file to set the language, you can set multiple variables.
 	```
 	LANG="es_MX.UTF-8"
-	LC_MESSAGES='es_US.UTF-8'
+	LC_CTYPE='en_US.UTF-8'
+	LC_MESSAGES='en_US.UTF-8'
 	LC_TIME='ja_JP.UTF-8'
 	```
 
@@ -50,10 +51,22 @@ You can change the color, cursor and icon themes opening the `lxappearance` prog
 
 If yu don't like the default applications open the Xfce `Default Applications` program and you'll be able to change the defaults of: web browser, mail reader, file manager and terminal emulator.
 
-## Lock image
+## Screenlock image
 
 If you press `Ctrl + Alt + L` you get a menu to logout, reboot, shutdown, suspend, hibernate and lock. To change the image you have to open `ArchLinux BetterLockScreen` and select an image of your suit.
 
+## Familiarize with the keyboard shortcuts
 
-
-[1]: https://en.wikipedia.org/wiki/XFree86_Modeline
+| Shortcut | Application |
+|----------|-------------|
+| Ctrl + Space | rofi -show drun |
+| Ctrl + Alt + K | archlinux-logout |
+| Ctrl + Alt + L | archlinux-logout |
+| Super + X | archlinux-logout |
+| Super + W | Default web browser |
+| Super + M | Default mail reader |
+| Super + F | Default file manager |
+| Super + T | Default terminal emulator |
+| Ctrl + Alt + Enter | Default terminal emulator |
+| Ctrl + Alt + T | alacritty -e tmux |
+| 
