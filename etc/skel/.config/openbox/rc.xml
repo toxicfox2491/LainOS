@@ -411,7 +411,7 @@
     </keybind>
     <keybind key="C-A-T">
       <action name="Execute">
-        <command>exo-open --launch TerminalEmulator</command>
+        <command>alacritty -e tmux</command>
       </action>
     </keybind>
     <keybind key="C-A-k">
