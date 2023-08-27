@@ -14,6 +14,10 @@ This effort precede the creation of a iso image installer with a build script.
 
 Other projects from the LainOS team
 
+### [LainOS ricer for MX Linux fluxbox](https://codeberg.org/LainOS/LainOS-ricer)
+
+Ricer script to customize MX Linux fluxbox to LainOS.
+
 ### [PDL](https://github.com/ashk123/PDL)
 
 PDL is a small tool for downloading and installing packages. 
