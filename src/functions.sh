@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function echo_title() { echo -ne "\033[1;44;37m${*}\033[0m\n"; }
 function echo_caption() { echo -ne "\033[0;1;44m${*}\033[0m\n"; }
