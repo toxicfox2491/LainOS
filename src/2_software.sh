@@ -76,8 +76,8 @@ list=(unace unrar zip unzip sharutils uudeview arj cabextract file-roller p7zip)
 install_list "${list[@]}"
 
 category Utilities
-list=(arandr baobab gmrun gtk2-perl gtk-engine-murrine imagemagick lxappearance
-	lxappearance-obconf lxrandr nitrogen obconf obmenu-generator
+list=(arandr baobab gmrun gsimplecal gtk2-perl gtk-engine-murrine imagemagick
+	lxappearance lxappearance-obconf lxrandr nitrogen obconf obmenu-generator
 	perl-linux-desktopfiles picom playerctl rofi rofi-calc tint2
 	volumeicon xorg-xbacklight xorg-xkill xorg-xrdb)
 install_list "${list[@]}"
