@@ -23,6 +23,7 @@ unzip ../assets/icons/StarLabsMiddleFingerMod.zip -d /usr/share/icons
 echo_p "Change name of the distro"
 sed -i 's/NAME=.*/NAME=LainOS/' /etc/os-release
 sed -i 's/PRETTY_NAME=.*/PRETTY_NAME=LainOS/' /etc/os-release
+sed -i 's/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION=\"LainOS\"/' /etc/lsb-release
 
 echo_p "Installing plymouth theme"
 plymouth_hellonavi
