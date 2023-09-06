@@ -10,6 +10,10 @@ The main purpose of these script is to provide customization of an fresh `Arch` 
 
 This effort precede the creation of a iso image installer with a build script.
 
+In support of the *Arch way* to install Arch Linux here are 2 [install guides](install_guides) to install it and then use the `Lain-ricer-arch.sh` script to rice it.
+
+![LainOS](images/term.jpg)
+
 ## More projects
 
 Other projects from the LainOS team
