@@ -14,8 +14,8 @@ install_list "${list[@]}"
 category Development
 list=( #gnome-boxes
 	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make
-	man-pages meld neovim onefetch python-virtualenv shellcheck
-	valgrind wget)
+	man-pages meld neovim onefetch python-virtualenv python-pipx
+	shellcheck valgrind wget)
 install_list "${list[@]}"
 
 category Fonts
@@ -30,7 +30,7 @@ install_list "${list[@]}"
 
 category Graphics
 list=( #gimp inkscape scour
-	nsxiv)
+	eog nsxiv)
 install_list "${list[@]}"
 
 category Internet
@@ -39,7 +39,7 @@ list=( #deluge deluge-gtk
 install_list "${list[@]}"
 
 category Multimedia
-list=(mpv)
+list=(cheese mpv)
 install_list "${list[@]}"
 
 category Office
@@ -68,7 +68,7 @@ list=(asciiquarium cmatrix cowsay figlet sl)
 install_list "${list[@]}"
 
 category Themes
-list=(breeze)
+list=(breeze breeze-gtk)
 install_list "${list[@]}"
 
 category Unpack
