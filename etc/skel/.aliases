@@ -49,8 +49,8 @@ alias llc="( [ -x \"$(command -v lolcat)\" ] && lolcat || awk '{print $0}' )"
 alias lg='lazygit'
 
 alias l='ls'
-if [ -x "$(command -v exa)" ]; then
-	alias ls='exa --icons --group-directories-first'
+if [ -x "$(command -v eza)" ]; then
+	alias ls='eza --icons --group-directories-first'
 	alias la='ls --all'
 	alias ll='ls --long --grid --time-style=long-iso'
 	alias lla='ls --all --long --grid --time-style=long-iso'

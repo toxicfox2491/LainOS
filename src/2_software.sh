@@ -57,7 +57,7 @@ list=(dconf-editor arc-gtk-theme openbox-arc-git inxi)
 install_list "${list[@]}"
 
 category Terminal
-list=(alacritty asciinema bat broot btop duf dust exa fd fzf htop
+list=(alacritty asciinema bat broot btop duf dust eza fd fzf htop
 	man-db neofetch procs python-pywal ripgrep rxvt-unicode tldr
 	terminus-font tmux vnstat xsel zoxide)
 install_list "${list[@]}"
