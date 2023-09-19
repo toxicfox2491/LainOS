@@ -65,13 +65,35 @@ function help() {
 	echo_info "\tTest extra glyphs"
 }
 
+function grub_theme() {
+	# Run as root
+	# sudo ./LainOS-ricer-arch.sh -g
+	cp -an /etc/default/grub /etc/default/grub.bak
+	mkdir -pv /boot/grub/themes/LainOS
+	cp -a ../assets/grub/themes/LainOS/* /boot/grub/themes/LainOS
+	# remove default grub style if any
+	sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
+	echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
+	# remove default timeout if any
+	sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
+	echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
+	# remove theme if any
+	sed -i '/GRUB_THEME=/d' /etc/default/grub
+	echo "GRUB_THEME=\"/boot/grub/themes/LainOS/theme.txt\"" >>/etc/default/grub
+	# remove default timeout if any
+	sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
+	echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
+	grub-mkconfig -o /boot/grub/grub.cfg
+}
+
 function plymouth_hellonavi() {
 	# Run as root
 	# sudo ./LainOS-ricer-arch.sh -p
 	git clone https://github.com/yi78/hellonavi.git
-	cp -rv ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
+	cp -v ./hellonavi/hellonavi/ /usr/share/plymouth/themes/
 	plymouth-set-default-theme -l
-	plymouth-set-default-theme -R hellonavi
+	# lainos theme supports prompt for LUKS password
+	plymouth-set-default-theme -R lainos # hellonavi
 }
 
 function test_font() {

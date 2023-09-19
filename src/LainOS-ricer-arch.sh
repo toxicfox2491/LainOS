@@ -35,7 +35,9 @@ else
 		fi
 	elif [ $# -eq 1 ]; then
 		echo 1: "$1"
-		if [[ "$1" = "-p" ]]; then
+		if [[ "$1" = "-g" ]]; then
+			grub_theme
+		elif [[ "$1" = "-p" ]]; then
 			plymouth_hellonavi
 		elif [[ "$1" = "-tf" ]]; then
 			test_font
