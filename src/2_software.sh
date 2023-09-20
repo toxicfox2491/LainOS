@@ -35,7 +35,7 @@ list=( #gimp inkscape scour
 install_list "${list[@]}"
 
 category Hacking
-list=(nmap zenmap sqlmap wireshark-qt kismet wifite-git gpa
+list=(nmap sqlmap wireshark-qt kismet wifite gpa
 	bettercap metasploit hashcat)
 install_list "${list[@]}"
 
