@@ -30,7 +30,7 @@ install_list "${list[@]}"
 
 category Graphics
 list=( #gimp inkscape scour
-	eog nsxiv)
+	eog)
 install_list "${list[@]}"
 
 category Internet
@@ -87,7 +87,6 @@ install_list "${list[@]}"
 category ArcoLinux
 
 list=(
-	xfce4-appfinder
 	xfce4-clipman-plugin
 	xfce4-power-manager
 	xfce4-screenshooter

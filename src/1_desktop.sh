@@ -40,9 +40,11 @@ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
 rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
 
+pacman -Sy
 # Desktop environment ##########################################################
 
 message 6 "Installation of the core software"
+message 7 "Openbox / X.org"
 # Check what video driver you need and
 # check for extra configurations
 list=( #xf86-video-amdgpu
@@ -135,7 +137,7 @@ list=(tlp)
 
 echo -e "\n\n"
 read -p "Is this device a laptop? [y/N] : " -n 1 -r
-[[ $REPLY =~ ^[Yy]$ ]] && install_list "${list[@]}" &&
+[[ $REPLY =~ ^[Yy]$ ]] && echo && install_list "${list[@]}" &&
 	echo_s "Enabling services" && systemctl enable tlp.service &&
 	echo_s "Software has been installed" ||
 	echo_s "\nLaptop pRograms are not being installed"

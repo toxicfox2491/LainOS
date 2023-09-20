@@ -139,12 +139,12 @@ etx() { # myarchive.tar.xz.gpg
 	tar cJvpf - "$1" | gpg --symmetric --cipher-algo AES256 -o "$2"
 }
 lsg() { # Filter ls output using grep
-	[ $# -eq 1 ] && ls -A | grep "$1"
-	[ $# -eq 2 ] && ls -A "$2" | grep "$1"
+	[ $# -eq 1 ] && ls --all | grep "$1"
+	[ $# -eq 2 ] && ls --all "$2" | grep "$1"
 }
 lsgi() { # Filter ls output using grep ignoring case
-	[ $# -eq 1 ] && ls -A | grep -i "$1"
-	[ $# -eq 2 ] && ls -A "$2" | grep -i "$1"
+	[ $# -eq 1 ] && ls --all | grep -i "$1"
+	[ $# -eq 2 ] && ls --all "$2" | grep -i "$1"
 }
 muc() { # Most n used commads, default n=10
 	[ -z "$1" ] && n=10 || n="$1"

@@ -43,7 +43,7 @@ function install_list() {
 	for name in "${list[@]}"; do
 		count=$((count + 1))
 		tput setaf 3 # Orange
-		echo "Installing package $count/$n: $name"
+		echo "$count/$n: $name"
 		tput sgr0
 		install "$name"
 	done
