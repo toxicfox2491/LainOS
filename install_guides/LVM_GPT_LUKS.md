@@ -230,7 +230,7 @@ After creating the partitions let's continue with the installation.
     ```
 - Uncomment the line from the  `/etc/locale.gen` file that corresponds to your locale
     ```shell
-    nano /etc/locale.gen ## uncomment en_US.UTF-8, es_MX.UTF-8
+    nvim /etc/locale.gen ## uncomment en_US.UTF-8, es_MX.UTF-8
     ```
 - Generate the locale
     ```shell
