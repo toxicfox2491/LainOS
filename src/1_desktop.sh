@@ -52,6 +52,15 @@ install_list "${list[@]}"
 echo_s "Enabling sddm as display manager"
 systemctl enable sddm.service
 
+message 14 "Hyprland / Wayland"
+list=(hyprland hyprpicker wofi grimblast-git nwg-look-bin
+	cliphist nwg-look-bin
+	dunst eww-wayland swayidle swaylock-effects-git swaylockd
+	sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme
+	cava xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
+	hyprpicker nm-connection-editor dictd wl-clip-persist-git)
+install_list "${list[@]}"
+
 # Sound ########################################################################
 
 message 6 "Choose pulseaudio or pipewire to have sound"
