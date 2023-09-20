@@ -16,7 +16,7 @@ list=( #gnome-boxes
 	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make
 	man-pages meld neovim onefetch python-virtualenv python-pipx
 	shellcheck valgrind wget
-	lisp go clang)
+	clisp go clang)
 install_list "${list[@]}"
 
 category Fonts
@@ -45,7 +45,7 @@ list=( #deluge deluge-gtk
 install_list "${list[@]}"
 
 category Multimedia
-list=(cheese mpv sayonara-player)
+list=(cheese mpv lollypop)
 install_list "${list[@]}"
 
 category Office
