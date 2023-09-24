@@ -7,20 +7,9 @@ scripts=$config/scripts
 # notification daemon
 dunst &
 
+swayidle -w timeout 300 'swaylock -f' timeout 360 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
 # battery notification
 # $scripts/default/battery_notif &
-
-# screen locking when idle
-$scripts/default/idle_handler &
-
-# Wallpapers with Variety
-variety &
-
-# For Japanese input
-fcitx5 &
-
-# effects
-# $scripts/rgb &
 
 # other
 ## persistent clipboard

@@ -63,7 +63,7 @@ category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat kloak-git \
 	librewolf-bin midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
-	sddm-lain-wired-theme tdrop tor-browser zenmap
+	sddm-lain-wired-theme swaylock-effects tdrop tor-browser wlogout zenmap
 
 category "Install fonts from the AUR"
 paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
