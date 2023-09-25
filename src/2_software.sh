@@ -20,8 +20,8 @@ list=( #gnome-boxes
 install_list "${list[@]}"
 
 category Fonts
-list=(otf-cascadia-code ttc-iosevka ttf-agave ttf-droid ttf-fira-code ttf-hack
-	ttf-inconsolata)
+list=(gnome-font-viewer otf-cascadia-code ttc-iosevka ttf-agave ttf-droid
+	ttf-fira-code ttf-hack ttf-inconsolata)
 install_list "${list[@]}"
 
 category Games
@@ -31,7 +31,7 @@ install_list "${list[@]}"
 
 category Graphics
 list=( #gimp inkscape scour
-	eog nsxiv)
+	eog)
 install_list "${list[@]}"
 
 category Hacking
@@ -93,7 +93,6 @@ install_list "${list[@]}"
 category ArcoLinux
 
 list=(
-	xfce4-appfinder
 	xfce4-clipman-plugin
 	xfce4-power-manager
 	xfce4-screenshooter

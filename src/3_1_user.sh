@@ -15,6 +15,7 @@ echo_p "Install some popular Neovim configuration stacks"
 read -p "Do you want to install Neovim plugins? [y/N] : " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 
+	echo
 	echo_p "Installing kickstart"
 	git clone https://github.com/nvim-lua/kickstart.nvim.git $HOME/.config/kickstart
 	echo_p "Installing LazyVim"
@@ -31,6 +32,7 @@ echo_p "Install some popular plugins for oh-my-zsh"
 read -p "Do you want to install zsh plugins? [y/N] : " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 
+	echo
 	# Install oh-my-zsh
 	echo_p "Installing oh-my-zsh"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -61,10 +63,13 @@ category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat kloak-git \
 	librewolf-bin midnight-gtk-theme-git mpv-thumbfast-git mpv-uosc \
-	sddm-lain-wired-theme tdrop tor-browser zenmap
+	sddm-lain-wired-theme swaylock-effects tdrop tor-browser wlogout zenmap
 
 category "Install fonts from the AUR"
 paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
+
+# Block add domains
+hblock
 
 # Generate openbox menu
 obmenu-generator -p -i -u
