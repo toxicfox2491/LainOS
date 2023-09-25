@@ -12,8 +12,8 @@ picom -b --config ~/.config/picom.conf &
 # Wallpaper manager
 variety &
 
-# Set background image
-nitrogen --restore
+# Set background image, choose this or variety
+# nitrogen --restore
 
 # Set bar
 tint2 &
