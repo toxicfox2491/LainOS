@@ -12,7 +12,13 @@ This effort precede the creation of a iso image installer with a build script.
 
 In support of the *Arch way* to install Arch Linux here are 2 [install guides](install_guides) to install it and then use the `Lain-ricer-arch.sh` script to rice it.
 
-![LainOS](images/term.jpg)
+## Openbox
+
+![LainOS Opebox](images/term.jpg)
+
+## Hyprland
+
+![LainOS Hyprland](images/Hyprland.jpg)
 
 ## More projects
 
