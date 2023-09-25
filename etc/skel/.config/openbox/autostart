@@ -9,6 +9,9 @@
 
 picom -b --config ~/.config/picom.conf &
 
+# Wallpaper manager
+variety &
+
 # Set background image
 nitrogen --restore
 
