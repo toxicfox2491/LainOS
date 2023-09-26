@@ -56,7 +56,7 @@ systemctl enable sddm.service
 
 message 14 "Hyprland / Wayland"
 list=(hyprland hyprpicker wofi grimblast-git nwg-look-bin
-	cliphist nwg-look-bin waybar
+	cliphist nwg-look-bin waybar swaybg
 	dunst eww-wayland swayidle swaylock-effects-git swaylockd
 	sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme
 	cava xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
