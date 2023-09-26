@@ -394,9 +394,9 @@ Now that we know the system is working we can finish tweaking the system.
     ```
     - After `base` and `udev`, example:
         - `HOOKS=(base udev plymouth autodetect modconf kms keyboard keymap consolefont block encrypt lvm2 filesystems fsck)`
-    - Update the boot
+    - Update the boot for every kernel you have: `linux`, `linux-lts`, `linux-zen`
         ```shell
-        mkinitcpio -p linx-zen ## root
+        mkinitcpio -p linux-zen ## root
         ```
 - Install a theme
 - Change the theme
