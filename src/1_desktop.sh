@@ -48,7 +48,7 @@ message 7 "Openbox / X.org"
 # Check what video driver you need and
 # check for extra configurations
 list=( #xf86-video-amdgpu
-	mesa openbox plymouth sddm xorg-server zsh)
+	mesa openbox plymouth sddm xorg-server gnome-keyring zsh)
 install_list "${list[@]}"
 
 echo_s "Enabling sddm as display manager"
