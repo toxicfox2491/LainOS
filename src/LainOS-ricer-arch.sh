@@ -13,9 +13,11 @@
 # 		based on ArcoLinuxD-openbox scripts by Erik Dubois
 #
 # NAME: LainOS ricer 4 Arch,  Part 1: root user
-# VERSION: 0.6
+# VERSION: 0.7
 #
 # ---------------------------------------------------------------------------
+
+# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
 
 if [ "${PWD##*/}" != "src" ]; then
 	function echo_error() { echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }

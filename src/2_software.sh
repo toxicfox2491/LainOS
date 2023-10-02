@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+
 source functions.sh
 
 # Base #########################################################################
@@ -13,10 +15,13 @@ install_list "${list[@]}"
 
 category Development
 list=( #gnome-boxes
-	base-devel ctags curl entr gcc gdb git git-delta jq lazygit make
-	man-pages meld neovim onefetch python-virtualenv python-pipx
-	shellcheck valgrind wget
-	clisp go clang)
+	base-devel ctags curl entr gdb git git-delta jq lazygit make
+	man-pages meld neovim nix onefetch python-virtualenv python-pipx
+	shellcheck valgrind wget)
+install_list "${list[@]}"
+
+category Programming
+list=(clang clisp gcc go rust)
 install_list "${list[@]}"
 
 category Fonts

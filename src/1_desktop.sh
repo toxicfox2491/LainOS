@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+
 source functions.sh
 
 # Preparation ##################################################################
