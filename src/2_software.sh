@@ -21,7 +21,7 @@ list=( #gnome-boxes
 install_list "${list[@]}"
 
 category Programming
-list=(clang clisp gcc go rust)
+list=(clang clisp gcc go python rust)
 install_list "${list[@]}"
 
 category Fonts
@@ -35,13 +35,13 @@ list=( #0ad steam
 install_list "${list[@]}"
 
 category Graphics
-list=( #gimp inkscape scour
-	eog)
+list=( #scour
+	eog gimp inkscape)
 install_list "${list[@]}"
 
 category Hacking
-list=(nmap sqlmap wireshark-qt kismet wifite gpa
-	bettercap metasploit hashcat)
+# kloak & zenmap on 3_1_user.sh script
+list=(bettercap nmap sqlmap wireshark-qt kismet wifite metasploit hashcat)
 install_list "${list[@]}"
 
 category Internet
@@ -50,17 +50,16 @@ list=( #deluge deluge-gtk
 install_list "${list[@]}"
 
 category Multimedia
-list=(cheese mpv lollypop)
+list=(cheese lollypop mpv vlc)
 install_list "${list[@]}"
 
 category Office
-list=( #libreoffice-fresh
-	evince)
+list=(evince libreoffice-fresh)
 install_list "${list[@]}"
 
-category Privacy
+category Privacy/Security
 # Librewolf and Tor on 3_1_user.sh script
-list=(element-desktop hblock keepassxc)
+list=(element-desktop firejail gufw gpa hblock keepassxc macchanger)
 install_list "${list[@]}"
 
 category System
@@ -88,7 +87,7 @@ install_list "${list[@]}"
 
 category Utilities
 list=(arandr baobab gmrun gsimplecal gtk2-perl gtk-engine-murrine imagemagick
-	lxappearance lxappearance-obconf lxrandr nitrogen obconf obmenu-generator
+	lxappearance lxappearance-obconf lxrandr nitrogen nix obconf obmenu-generator
 	perl-linux-desktopfiles picom playerctl rofi rofi-calc tint2
 	variety volumeicon xorg-xbacklight xorg-xkill xorg-xrdb)
 install_list "${list[@]}"
