@@ -36,7 +36,7 @@ install_list "${list[@]}"
 
 category Graphics
 list=( #scour
-	eog gimp inkscape)
+	gimp inkscape loupe)
 install_list "${list[@]}"
 
 category Hacking
