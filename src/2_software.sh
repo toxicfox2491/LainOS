@@ -50,7 +50,7 @@ list=( #deluge deluge-gtk
 install_list "${list[@]}"
 
 category Multimedia
-list=(cheese lollypop mpv vlc)
+list=(snapshot lollypop mpv vlc)
 install_list "${list[@]}"
 
 category Office
