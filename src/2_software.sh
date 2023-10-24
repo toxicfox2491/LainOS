@@ -13,6 +13,11 @@ list=( #universal-android-debloater-bin onthespot-git spicetify-cli
 	xdg-ninja xdg-user-dirs yt-dlp)
 install_list "${list[@]}"
 
+category Android
+list=( #universal-android-debloater-bin (AUR)
+	android-tools gvfs-gphoto2 gvfs-mtp mtpfs)
+install_list "${list[@]}"
+
 category Development
 list=( #gnome-boxes
 	archiso base-devel ctags curl entr gdb git git-delta jq lazygit make
