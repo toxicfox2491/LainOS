@@ -15,7 +15,7 @@ install_list "${list[@]}"
 
 category Development
 list=( #gnome-boxes
-	base-devel ctags curl entr gdb git git-delta jq lazygit make
+	archiso base-devel ctags curl entr gdb git git-delta jq lazygit make
 	man-pages meld neovim nix onefetch python-virtualenv python-pipx
 	shellcheck valgrind wget)
 install_list "${list[@]}"
