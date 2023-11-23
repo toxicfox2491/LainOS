@@ -118,7 +118,7 @@
   )
 
   # Manual change, change the icon of Arch Linux for the icon of LainOS
- typeset -g POWERLEVEL9K_LINUX_ARCH_ICON=' '
+ typeset -g POWERLEVEL9K_LINUX_ARCH_ICON=' '
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-v3

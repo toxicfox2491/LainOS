@@ -121,8 +121,8 @@ function test_font() {
 }
 
 function test_glyphs() {
-	message 10 "Testing extra symbols glyphs"
-	from=F330 to=F35F
+	message 10 "Testing accela and copland glyphs"
+	from=F3FE to=F3FF
 	from=$(printf '%d' "0x$from") to=$(printf '%d' "0x$to")
 	while test "$from" -le "$to"; do
 		num=$(printf '%04x' "$from")
