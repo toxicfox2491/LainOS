@@ -53,6 +53,7 @@ tmux_conf_new_pane_reconnect_ssh=true
 # see https://github.com/termstandard/colors
 tmux_conf_24b_colour=auto
 
+
 # -- theming -------------------------------------------------------------------
 
 # enable or disable theming:
@@ -66,29 +67,65 @@ tmux_conf_24b_colour=auto
 #   - tmux_conf_theme_synchronized
 tmux_conf_theme=enabled
 
-# custom color theme, you have 256 colours! 0 is no color
+# --> Kanagawa theme, the 25 colors from kanagawa banner
+# Row 0
+kw_r0c0="#16161d"
+kw_r0c1="#1f1f28"
+kw_r0c2="#2a2a37"
+kw_r0c3="#363646"
+kw_r0c4="#54546d"
+# Row 1
+kw_r1c0="#dcd7ba"
+kw_r1c1="#727169"
+kw_r1c2="#223249"
+kw_r1c3="#2d4f67"
+kw_r1c4="#938aa9"
+# Row 2
+kw_r2c0="#957fb8"
+kw_r2c1="#7e9cd8"
+kw_r2c2="#7aa89f"
+kw_r2c3="#d27e99"
+kw_r2c4="#e82424"
+# Row 3
+kw_r3c0="#7fb4ca"
+kw_r3c1="#98bb6c"
+kw_r3c2="#e46876"
+kw_r3c3="#ffa066"
+kw_r3c4="#6a9589"
+# Row 4
+kw_r4c0="#e6c384"
+kw_r4c1="#c0a36e"
+kw_r4c2="#ff5d62"
+kw_r4c3="#9cabca"
+kw_r4c4="#658594"
+# Extra
+kw_ex0="#090618"
+kw_ex1="#252535"
+kw_ex2="#76946a"
+kw_ex3="#c34043"
+
 # |      status left      |       window list        |      status right     |
 # | 1st b | 2nd b | 3rd b |          4th b           | 5th b | 6th b | 7th b |
 
-tmux_conf_theme_colour_1="color0"	# 4th block bg
-tmux_conf_theme_colour_2="color0"	# previous window bg & pane border
-tmux_conf_theme_colour_3="color7"	# other windows fg
-tmux_conf_theme_colour_4="color213"	# current window bg & previous window fg
-tmux_conf_theme_colour_5="color6"	# highlight selection on list (C-b w)
+tmux_conf_theme_colour_1="$kw_r0c0"	# 4th block bg
+tmux_conf_theme_colour_2="$kw_r0c3"	# previous window bg & pane border
+tmux_conf_theme_colour_3="$kw_r0c4"	# other windows fg
+tmux_conf_theme_colour_4="$kw_r2c0"	# current window bg & previous window fg
+tmux_conf_theme_colour_5="$kw_ex2"	# highlight selection on list (C-b w)
 
-tmux_conf_theme_colour_6="color16"	# 1st block fg
-tmux_conf_theme_colour_7="color3"	# 2nd block fg
-tmux_conf_theme_colour_8="color3"	# 3rd block fg
-tmux_conf_theme_colour_9="color3"	# 1st block bg & pane border active on copy mode
-tmux_conf_theme_colour_10="color0"	# 2nd block bg
-tmux_conf_theme_colour_11="color0"	# 3rd block bg
+tmux_conf_theme_colour_6="$kw_ex1"	# 1st block fg
+tmux_conf_theme_colour_7="$kw_r2c1"	# 2nd block fg
+tmux_conf_theme_colour_8="$kw_r1c0"	# 3rd block fg
+tmux_conf_theme_colour_9="$kw_r2c1"	# 1st block bg & pane border active on copy mode
+tmux_conf_theme_colour_10="$kw_ex1"	# 2nd block bg
+tmux_conf_theme_colour_11="$kw_r0c2"	# 3rd block bg
 
-tmux_conf_theme_colour_12="color7"	# 5th block fg
-tmux_conf_theme_colour_13="color41"	# 6th block fg
-tmux_conf_theme_colour_14="color43"	# 7th block fg & pane border active
-tmux_conf_theme_colour_15="color0"	# 5th block bg
-tmux_conf_theme_colour_16="color23"	# 6th block bg
-tmux_conf_theme_colour_17="color25"	# 7th block bg
+tmux_conf_theme_colour_12="$kw_ex0"	# 5th block fg
+tmux_conf_theme_colour_13="$kw_r0c1"	# 6th block fg
+tmux_conf_theme_colour_14="$kw_r0c1"	# 7th block fg & pane border active
+tmux_conf_theme_colour_15="$kw_r3c4"	# 5th block bg
+tmux_conf_theme_colour_16="$kw_r3c3"	# 6th block bg
+tmux_conf_theme_colour_17="$kw_r4c2"	# 7th block bg
 
 # window style
 tmux_conf_theme_window_fg="default"
@@ -111,7 +148,7 @@ tmux_conf_theme_pane_border_style=thin
 tmux_conf_theme_pane_border="$tmux_conf_theme_colour_2"
 tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_4"
 %if #{>=:#{version},3.2}
-tmux_conf_theme_pane_active_border="#{?pane_in_mode,$tmux_conf_theme_colour_9,#{?synchronize-panes,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_14}}"
+tmux_conf_theme_pane_active_border="#{?pane_in_mode,$tmux_conf_theme_colour_9,#{?synchronize-panes,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_4}}"
 %endif
 
 # pane indicator colours (when you hit <prefix> + q)
@@ -200,10 +237,10 @@ tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_2"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
-#tmux_conf_theme_left_separator_main=""
-#tmux_conf_theme_left_separator_sub="|"
-#tmux_conf_theme_right_separator_main=""
-#tmux_conf_theme_right_separator_sub="|"
+# tmux_conf_theme_left_separator_main=""
+# tmux_conf_theme_left_separator_sub="|"
+# tmux_conf_theme_right_separator_main=""
+# tmux_conf_theme_right_separator_sub="|"
 tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
 tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
 tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
@@ -280,9 +317,10 @@ tmux_conf_theme_synchronized_bg="none"
 tmux_conf_theme_synchronized_attr="none"
 
 # battery bar symbols
-#tmux_conf_battery_bar_symbol_full="◼"
-#tmux_conf_battery_bar_symbol_empty="◻"
-tmux_conf_battery_bar_symbol_full="♥"
+# tmux_conf_battery_bar_symbol_full="◼"
+# tmux_conf_battery_bar_symbol_empty="◻"
+# tmux_conf_battery_bar_symbol_full="♥"
+tmux_conf_battery_bar_symbol_full="" # accela, U+3FF
 tmux_conf_battery_bar_symbol_empty="·"
 
 # battery bar length (in number of symbols), possible values are:
@@ -319,7 +357,7 @@ tmux_conf_battery_status_discharging="↓"    # U+2193
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
-tmux_conf_theme_clock_colour="$tmux_conf_theme_colour_16"
+tmux_conf_theme_clock_colour="$tmux_conf_theme_colour_4"
 tmux_conf_theme_clock_style="24"
 
 
@@ -420,6 +458,7 @@ set -g @continuum-restore 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
 
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
@@ -429,6 +468,8 @@ set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
 #
 # then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
 # 'tmux_conf_theme_status_right' variables.
+
+# ------------------------------------------------------------------------------
 
 # # /!\ do not remove the following line
 # EOF
@@ -446,3 +487,4 @@ set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
 #
 # "$@"
 # # /!\ do not remove the previous line
+# #     do not write below this line
