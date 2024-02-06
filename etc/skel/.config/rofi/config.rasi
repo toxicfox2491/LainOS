@@ -10,4 +10,5 @@ configuration {
   sidebar-mode: true;
 }
 
-@theme "/usr/share/rofi/themes/squared-midnight.rasi"
+@theme "/usr/share/rofi/themes/squared-kanagawa.rasi"
+//@theme "/usr/share/rofi/themes/squared-midnight.rasi"
