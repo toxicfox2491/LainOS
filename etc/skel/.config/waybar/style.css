@@ -1,10 +1,5 @@
 /* -----------------------------------------------------
- * Import Pywal colors 
- * ----------------------------------------------------- */
-/* @import '../../.cache/wal/colors-waybar.css'; */
-
-/* -----------------------------------------------------
- * General 
+ * General
  * ----------------------------------------------------- */
 
 * {
@@ -15,19 +10,19 @@
 
 window#waybar {
     background-color: rgba(0,0,0,0.8);
-    border-bottom: 0px solid #ffffff;
-    /* color: #ECDBEE; */
+    border-bottom: 0px solid #DCD7BA;
+    /* color: #938AA9; */
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 /* -----------------------------------------------------
- * Workspaces 
+ * Workspaces
  * ----------------------------------------------------- */
 
 #workspaces {
-    background: #0B0A10;
+    background: #16161D;
     margin: 5px 5px 5px 5px;
     padding: 4px 1px;
     border-radius: 12px;
@@ -40,7 +35,7 @@ window#waybar {
     padding: 0px 10px;
     margin: 0px 3px;
     border-radius: 12px;
-    color: #0088AA;
+    color: #7E9CD8;
     transition: all 0.3s ease-in-out;
     opacity:0.75;
     font-size:13px;
@@ -52,27 +47,27 @@ window#waybar {
 
 tooltip {
     border-radius: 10px;
-    background-color: #0B0A10;
+    background-color: #16161D;
     opacity:0.75;
     padding:20px;
     margin:0px;
 }
 
 tooltip label {
-    color: #ECDBEE;
+    color: #938AA9;
 }
 
 /* -----------------------------------------------------
- * Window
+ * Window (central module)
  * ----------------------------------------------------- */
 
 #window {
-    background: #ECDBEE;
+    background: #938AA9;
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 12px;
     color:@background;
-    font-size:16px;
+    font-size:14px;
     font-weight:normal;
     opacity:0.75;
 }
@@ -82,19 +77,19 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
- * Taskbar
+ * Taskbar (open windows)
  * ----------------------------------------------------- */
 
 #taskbar {
-    background: #0B0A10;
-    color: #ECDBEE;
+    background: transparent;
+    color: #938AA9;
     margin: 3px 15px 3px 0px;
     padding: 2px 3px 1px 3px;
     border-radius: 14px;
     font-weight: normal;
     font-style: normal;
-    opacity:0.75;
-    border: 3px solid #0B0A10;
+    /* opacity:0.75; */
+    /* border: 3px solid #16161D; */
 }
 
 #taskbar button {
@@ -118,10 +113,10 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-librewolf, #custom-firefox, #custom-outlook, #custom-filemanager, #custom-teams, #custom-chatgpt, #custom-calculator, #custom-windowsvm {
-    color: #0088AA;
-    margin-left:10px;
-    margin-right:10px;
+#custom-librewolf, #custom-firefox, #custom-filemanager, #custom-chatgpt, #custom-calculator, #custom-windowsvm {
+    color: #7E9CD8;
+    margin-left:5px;
+    margin-right:5px;
     font-size:20px;
     font-weight:bold;
     opacity:0.75;
@@ -132,14 +127,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
-    color: #0088AA;
+    color: #7E9CD8;
     border-radius: 12px;
     padding: 0px 10px 0px 10px;
     margin: 3px 15px 3px 14px;
     opacity:0.75;
-    border:2px solid #0B0A10;
+    border:2px solid #16161D;
 }
 
 /* -----------------------------------------------------
@@ -156,7 +151,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-updates {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
@@ -166,17 +161,18 @@ window#waybar.empty #window {
 }
 
 #custom-updates.green {
-    background-color: #0B0A10;
+    /* backgrund-color: ; */
+    color: #76946A;
 }
 
 #custom-updates.yellow {
-    background-color: #ff9a3c;
-    color: #ffffff;
+    /* background-color: ; */
+    color: #FFA066;
 }
 
 #custom-updates.red {
-    background-color: #dc2f2f;
-    color: #ffffff;
+    /* background-color: ; */
+    color: #e46876;
 }
 
 /* -----------------------------------------------------
@@ -184,7 +180,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-youtube {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
@@ -212,14 +208,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
-    color: #ECDBEE;
+    color: #938AA9;
     border-radius: 12px;
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
     opacity:0.75;
-    border:3px solid #0B0A10;
+    border:3px solid #16161D;
 }
 
 /* -----------------------------------------------------
@@ -227,7 +223,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
@@ -237,8 +233,8 @@ window#waybar.empty #window {
 }
 
 #pulseaudio.muted {
-    background-color: #253e59;
-    color: #ECDBEE;
+    background-color: #2D4F67;
+    color: #938AA9;
 }
 
 /* -----------------------------------------------------
@@ -246,24 +242,24 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
     padding: 2px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
     opacity:0.75;
-    border: 3px solid #ECDBEE
+    border: 3px solid #938AA9
 }
 
 #network.ethernet {
-    background-color: #253e59;
-    color:#ECDBEE;
+    background-color: #2D4F67;
+    color:#938AA9;
 }
 
 #network.wifi {
-    background-color: #253e59;
-    color:#ECDBEE;
+    background-color: #2D4F67;
+    color:#938AA9;
 }
 
 /* -----------------------------------------------------
@@ -271,7 +267,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #bluetooth.on, #bluetooth.connected {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
@@ -291,7 +287,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    background-color: #0B0A10;
+    background-color: #16161D;
     font-size: 16px;
     color: @background;
     border-radius: 12px;
@@ -301,20 +297,20 @@ window#waybar.empty #window {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #253e59;
+    color: #DCD7BA;
+    background-color: #2D4F67;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #0B0A10;
+        background-color: #DCD7BA;
+        color: #16161D;
     }
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #DCD7BA;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -327,14 +323,14 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-    background: #0B0A10;
+    background: #16161D;
     margin: 3px 15px 3px 0px;
     padding: 2px 3px 1px 3px;
     border-radius: 14px;
     font-weight: normal;
     font-style: normal;
     opacity:0.75;
-    border: 3px solid #0B0A10;
+    border: 3px solid #16161D;
 }
 
 #tray > .passive {
@@ -351,7 +347,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 label:focus {
-    background-color: #0B0A10;
+    background-color: #16161D;
 }
 
 #backlight {
@@ -363,6 +359,6 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #ff5d62;
 }
 

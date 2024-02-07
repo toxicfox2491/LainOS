@@ -10,11 +10,11 @@
     // "position": "bottom",
     // "margin-top": 0,
     // "margin-bottom": 5,
-    
+
     "layer": "top",
     "height": 50,
     "margin-left": 0,
-    "margin-right": 0,    
+    "margin-right": 0,
     "spacing": 0,
 
     // Load Modules
@@ -24,24 +24,24 @@
     "modules-left": [
         "custom/appmenu",
         "hyprland/workspaces",
-        //"group/quicklinks",
+        "group/quicklinks",
         "wlr/taskbar"
-        //"hyprland/window" // titlebar
     ],
 
     // Modules Center
     "modules-center": [
-        "clock"
+        "hyprland/window" // titlebar
     ],
 
-    // Modules Right    
+    // Modules Right
     "modules-right": [
-        //"custom/updates",
-        "pulseaudio",
+        "custom/updates",
         //"bluetooth",
-        //"battery", 
+        //"battery",
         //"group/hardware",
-	"tray",
+        "tray",
+        "pulseaudio",
+        "clock",
         "custom/exit" // xlogout
         //"network",
     ],
@@ -52,6 +52,7 @@
         "modules": [
             "custom/filemanager",
             "custom/librewolf",
+            "custom/calculator",
          ]
     },
 

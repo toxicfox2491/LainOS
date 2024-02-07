@@ -42,6 +42,8 @@
 	"hyprland/window": {
 		"rewrite": {
 			"(.*) - Brave": "$1",
+			"(.*) - Mozilla Firefox": "$1",
+			"(.*) - LibreWolf": "$1",
 			"(.*) - Chromium": "$1",
 			"(.*) - Brave Search": "$1",
 			"(.*) - Outlook": "$1",
@@ -49,36 +51,19 @@
 		},
 		"separate-outputs": true
 	},
-	"custom/youtube": {
-		"format": " {}",
-		"exec": "python ~/private/youtube.py",
-		"restart-interval": 600,
-		"on-click": "brave https://studio.youtube.com",
-		"tooltip": false
-	},
 	"custom/updates": {
-		"format": "  {}",
+		"format": " {}",
 		"tooltip-format": "{}",
 		"escape": true,
 		"return-type": "json",
-		"exec": "~/dotfiles/scripts/updates.sh",
-		"restart-interval": 60,
-		"on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+		"exec": "~/.bin/updates",
+		"restart-interval": 300,
+		"on-click": "alacritty -e ~/.bin/update_prompt",
 		"tooltip": false
 	},
 	"custom/filemanager": {
 		"format": "",
 		"on-click": "exo-open --launch FileManager",
-		"tooltip": false
-	},
-	"custom/outlook": {
-		"format": "",
-		"on-click": "brave --app=https://outlook.office.com/mail/",
-		"tooltip": false
-	},
-	"custom/teams": {
-		"format": "",
-		"on-click": "chromium --app=https://teams.microsoft.com/go",
 		"tooltip": false
 	},
 	"custom/firefox": {
@@ -93,17 +78,12 @@
 	},
 	"custom/chatgpt": {
 		"format": "",
-		"on-click": "brave --app=https://chat.openai.com",
+		"on-click": "firefox https://chat.openai.com",
 		"tooltip": false
 	},
 	"custom/calculator": {
 		"format": "",
-		"on-click": "~/dotfiles/scripts/calculator.sh",
-		"tooltip": false
-	},
-	"custom/windowsvm": {
-		"format": "",
-		"on-click": "~/private/launchvm.sh",
+		"on-click": "rofi -show calc",
 		"tooltip": false
 	},
 	"custom/appmenu": {
