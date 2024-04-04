@@ -31,7 +31,7 @@ install_list "${list[@]}"
 
 category Fonts
 list=(gnome-font-viewer otf-cascadia-code ttc-iosevka ttf-agave ttf-droid
-	ttf-fira-code ttf-hack ttf-inconsolata)
+	ttf-nerd-fonts-symbols ttf-fira-code ttf-hack ttf-inconsolata)
 install_list "${list[@]}"
 
 category Games
