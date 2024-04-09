@@ -8,7 +8,9 @@ vim.opt.number = true -- Print line number
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 8 -- Size of an indent
 vim.opt.signcolumn = "auto" -- Column that shows signs for debuggers, etc
-vim.opt.spell = false
+vim.opt.spell = true
 vim.opt.tabstop = 8 -- Number of spaces tabs count for
 -- vim.opt.winbar = "%=%m %f" -- Filename at top-right corner
 vim.opt.wrap = true -- lines longer than the width of the window will wrap and	displaying continues on the next line
+vim.opt.shada = "'500,<1000,s100" -- Save marks for the last 500 files, upto 1000 lines, items bigger than 100Kb skipped
+vim.g.lazygit_config = false

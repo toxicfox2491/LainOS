@@ -5,23 +5,20 @@
 local Util = require("lazyvim.util")
 
 local function map(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	---@cast keys LazyKeysHandler
-	-- do not create the keymap if a lazy keys handler exists
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
 end
 
--- toggle tagbar
-map({ "i", "n", "v" }, "<F8>", "<cmd>TagbarToggle<cr><esc>", { desc = "Toggle Tagbar" })
-
--- toggle transparency
+-- transparent toggle
 map({ "i", "n", "v" }, "<F7>", "<cmd>TransparentToggle<cr><esc>", { desc = "Toggle transparency" })
 
--- vim-tmux-navigator
+-- toggle terminal
 map({ "i", "n", "v" }, "<C-k>", "<cmd>TmuxNavigateUp<cr><esc>", { desc = "Move cursor to top pane" })
 map({ "i", "n", "v" }, "<C-j>", "<cmd>TmuxNavigateDown<cr><esc>", { desc = "Move cursor to bottom pane" })
 map({ "i", "n", "v" }, "<C-h>", "<cmd>TmuxNavigateLeft<cr><esc>", { desc = "Move cursor to left pane" })
