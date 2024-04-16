@@ -34,6 +34,9 @@
 # The default is to simply set WP=$1.
 WP=$1
 
+magick "$WP" $HOME/.cache/current_wallpaper.jpg
+magick "$WP" -blur 0x10 $HOME/.cache/current_wallpaper_blurred.jpg
+
 # Enlightenment
 # Needs Modules/System/DBus Extension loaded to work
 if [[ "$DESKTOP" == *"Enlightenment"* ]] || [[ "$DESKTOP" == *"Moksha"* ]]; then
@@ -251,7 +254,6 @@ if [[ -n $SWAYSOCK || $XDG_CURRENT_DESKTOP == "Hyprland" ]]; then
 	else
 		swaymsg output "*" bg "$WP" fill 2>/dev/null
 	fi
-	cp "$WP" $HOME/.cache/current_wallpaper
 fi
 
 # trinity

@@ -5,7 +5,7 @@ DOC=libreoffice                   #Tag 3
 FILE=thunar                       #Tag 4
 PLAYER=mpv                        #Tag 5
 GAME=steam-native                 #Tag 6
-PHOTO=eog                         #Tag 7
+PHOTO=loupe                       #Tag 7
 SANDBOX="mailspring --no-sandbox" #Tag 8
 DEV=nvim                          #Tag 9
 
