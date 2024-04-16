@@ -36,7 +36,7 @@ The alternative Wayland WM is `Hyprland` and it uses the `eww` bar. All cool kid
 
 ## Config files
 
-On `etc/skel/.config` there are several config files for some applications, the more relevant are: `alacritty`, `fontconfig` `neofetch`, `openbox`, `hypr`, `rofi`, `tint2`, `rofi`. Some packages are specific to Openbox other to Hyprland and some are used in both.
+On `etc/skel/.config` there are several config files for some applications, the more relevant are: `alacritty`, `fastfetch`, `fontconfig`, `openbox`, `hypr`, `rofi`, `tint2`, `rofi`. Some packages are specific to Openbox other to Hyprland and some are used in both.
 
 ## Terminal
 
