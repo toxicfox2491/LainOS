@@ -4,6 +4,16 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+bind-key -n S-PageUp copy-mode \; send-keys PageUp
+bind-key -n S-PageDown copy-mode \; send-keys PageDown
+# -- bindings ------------------------------------------------------------------
+
+# preserve tmux stock bindings,
+# while adding bindings that don't conflict with these stock bindings
+# /!\ this disables some of Oh my tmux! bindings described in README.md
+#   - true
+#   - false (default)
+tmux_conf_preserve_stock_bindings=false
 
 # -- session creation ----------------------------------------------------------
 
@@ -12,6 +22,12 @@
 #   - false (default)
 #   - disabled (do not modify new-session bindings)
 tmux_conf_new_session_prompt=false
+
+# new session retains current path, possible values are:
+#   - true
+#   - false (default)
+#   - disabled (do not modify new-session bindings)
+tmux_conf_new_session_retain_current_path=false
 
 
 # -- windows & pane creation ---------------------------------------------------
@@ -67,7 +83,7 @@ tmux_conf_24b_colour=auto
 #   - tmux_conf_theme_synchronized
 tmux_conf_theme=enabled
 
-# --> Kanagawa theme, the 25 colors from kanagawa banner
+# --> Kanagawa theme, the 25 colors from kanagawa banner and few extra ones
 # Row 0
 kw_r0c0="#16161d"
 kw_r0c1="#1f1f28"
@@ -273,8 +289,9 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
+# 
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %b%d(%a) %H:%M   | #{username}#{root} | #{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -284,7 +301,7 @@ tmux_conf_theme_status_left_attr="bold,none,none"
 # status right style
 tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
 tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_17"
-tmux_conf_theme_status_right_attr="none,none,bold"
+tmux_conf_theme_status_right_attr="bold,bold,bold"
 
 # pairing indicator
 tmux_conf_theme_pairing="⚇"                 # U+2687
@@ -299,13 +316,13 @@ tmux_conf_theme_prefix_bg="none"
 tmux_conf_theme_prefix_attr="none"
 
 # mouse indicator
-tmux_conf_theme_mouse="↗"                   # U+2197
+tmux_conf_theme_mouse="󰍽"                   # U+F037D
 tmux_conf_theme_mouse_fg="none"
 tmux_conf_theme_mouse_bg="none"
 tmux_conf_theme_mouse_attr="none"
 
 # root indicator
-tmux_conf_theme_root="!"
+tmux_conf_theme_root="󱈸"                    # U+F1238
 tmux_conf_theme_root_fg="none"
 tmux_conf_theme_root_bg="none"
 tmux_conf_theme_root_attr="bold,blink"
@@ -320,7 +337,7 @@ tmux_conf_theme_synchronized_attr="none"
 # tmux_conf_battery_bar_symbol_full="◼"
 # tmux_conf_battery_bar_symbol_empty="◻"
 # tmux_conf_battery_bar_symbol_full="♥"
-tmux_conf_battery_bar_symbol_full="" # accela, U+3FF
+tmux_conf_battery_bar_symbol_full="" # accela, U+F3FE
 tmux_conf_battery_bar_symbol_empty="·"
 
 # battery bar length (in number of symbols), possible values are:
@@ -372,6 +389,12 @@ tmux_conf_theme_clock_style="24"
 tmux_conf_copy_to_os_clipboard=true
 
 
+# -- urlscan -------------------------------------------------------------------
+
+# options passed to urlscan
+tmux_conf_urlscan_options="--compact --dedupe"
+
+
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
@@ -388,7 +411,7 @@ bind | split-window -h
 bind ñ set-option status
 
 # skip "kill-pane 1? (y/n)" prompt
-bind-key x kill-pane
+# bind-key x kill-pane
 
 # don't exit from tmux when closing a session
 set -g detach-on-destroy off
@@ -412,7 +435,7 @@ set -g @t-fzf-prompt '  '
 # bind c new-window -c '#{pane_current_path}' #!important
 
 # move status line to top
-#set -g status-position top
+set -g status-position top
 
 
 # -- tpm -----------------------------------------------------------------------
@@ -457,6 +480,7 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
+# set -g @plugin 'obergodmar/kanagawa-tmux'
 
 
 # -- custom variables ----------------------------------------------------------
@@ -483,6 +507,16 @@ set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
 #
 # online() {
 #   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+# }
+#
+# wan_ip_v4() {
+#   curl -f -s -m 2 -4 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# wan_ip_v6() {
+#   curl -f -s -m 2 -6 ifconfig.me
+#   sleep 300                                         # sleep for 5 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # "$@"
