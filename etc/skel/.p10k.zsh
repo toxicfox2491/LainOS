@@ -58,9 +58,9 @@
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-    # node_version          # node.js version
-    # go_version            # go version (https://golang.org)
-    # rust_version          # rustc version (https://www.rust-lang.org)
+    node_version            # node.js version
+    go_version              # go version (https://golang.org)
+    rust_version            # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
     # php_version           # php version (https://www.php.net/)
     # laravel_version       # laravel php framework version (https://laravel.com/)
@@ -106,7 +106,7 @@
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
-    time                    # current time
+    # time                  # current time
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -124,7 +124,7 @@
   typeset -g POWERLEVEL9K_VCS_GIT_FREEBSD_ICON='\uF30C' # 
   typeset -g POWERLEVEL9K_VCS_GIT_FREEDESKTOP_ICON='\uF360' # 
   typeset -g POWERLEVEL9K_VCS_GIT_GNOME_ICON='\uF361' # 
-  typeset -g POWERLEVEL9K_VCS_GIT_KDE_ICON='\uF332' # 
+  typeset -g POWERLEVEL9K_VCS_GIT_KDE_ICON='\uF373' # 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-v3
   # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
