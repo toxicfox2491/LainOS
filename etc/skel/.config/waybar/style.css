@@ -9,14 +9,17 @@
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,1);
     border-bottom: 0px solid #DCD7BA;
-    /* color: #938AA9; */
+    color: #938AA9;
     background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
+window#waybar.hidden {
+    opacity: 0.2;
+}
 /* -----------------------------------------------------
  * Workspaces
  * ----------------------------------------------------- */
@@ -36,8 +39,8 @@ window#waybar {
     margin: 0px 3px;
     border-radius: 12px;
     color: #7E9CD8;
-    transition: all 0.3s ease-in-out;
-    opacity:0.75;
+    /* transition: all 0.3s ease-in-out; */
+    /* opacity:0.85; */
     font-size:13px;
 }
 
@@ -113,7 +116,7 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-librewolf, #custom-firefox, #custom-filemanager, #custom-chatgpt, #custom-calculator, #custom-windowsvm {
+#custom-librewolf, #custom-firefox, #custom-filemanager, #custom-calculator, #custom-windowsvm {
     color: #7E9CD8;
     margin-left:5px;
     margin-right:5px;
@@ -167,12 +170,12 @@ window#waybar.empty #window {
 
 #custom-updates.yellow {
     /* background-color: ; */
-    color: #FFA066;
+    color: #E6C384;
 }
 
 #custom-updates.red {
     /* background-color: ; */
-    color: #e46876;
+    color: #E46876;
 }
 
 /* -----------------------------------------------------
@@ -316,6 +319,34 @@ window#waybar.empty #window {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * gammarelay
+ * ----------------------------------------------------- */
+
+#custom-wl-gammarelay-temperature,
+#custom-wl-gammarelay-brightness,
+#custom-wl-gammarelay-gamma,
+#custom-wl-gammarelay-applet
+{
+    background: #16161D;
+    margin: 3px 15px 3px 0px;
+    padding: 2px 3px 1px 3px;
+    border-radius: 14px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.75;
+    border: 3px solid #16161D;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
 }
 
 /* -----------------------------------------------------

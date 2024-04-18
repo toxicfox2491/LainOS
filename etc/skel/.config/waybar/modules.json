@@ -1,6 +1,6 @@
 {
 	"hyprland/workspaces": {
-		"disable-scroll": true,
+		"disable-scroll": false,
 		"on-click": "activate",
 		"active-only": false,
 		"all-outputs": false,
@@ -20,21 +20,25 @@
 			"active": "",
 			"default": ""
 		},
-		"persistent_workspaces": {
-			"*": 10
+		"persistent-workspaces": {
+			"*": 5
 		}
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
-		"icon-size": 18,
+		"icon-size": 20,
 		"tooltip-format": "{title}",
 		"on-click": "activate",
 		"on-click-middle": "close",
-		"ignore-list": [],
+		"on-click-right": "minimize-raise",
+		"ignore-list": [
+			"Alacritty"
+		],
 		"app_ids-mapping": {
 			"firefoxdeveloperedition": "firefox-developer-edition"
 		},
 		"rewrite": {
+			"Mozilla Firefox": "Firefox",
 			"Firefox Web Browser": "Firefox",
 			"Foot Server": "Terminal"
 		}
@@ -43,22 +47,43 @@
 		"rewrite": {
 			"(.*) - Brave": "$1",
 			"(.*) - Mozilla Firefox": "$1",
-			"(.*) - LibreWolf": "$1",
-			"(.*) - Chromium": "$1",
-			"(.*) - Brave Search": "$1",
-			"(.*) - Outlook": "$1",
-			"(.*) Microsoft Teams": "$1"
+			"(.*) - LibreWolf": "$1"
 		},
 		"separate-outputs": true
+	},
+	"custom/wl-gammarelay-temperature": {
+		"format": "{} ",
+		"exec": "wl-gammarelay-rs watch {t}",
+		"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+		"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
+	},
+	"custom/wl-gammarelay-brightness": {
+		"format": "{}% ",
+		"exec": "wl-gammarelay-rs watch {bp}",
+		"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+		"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02"
+	},
+	"custom/wl-gammarelay-gamma": {
+		"format": "{}% γ",
+		"exec": "wl-gammarelay-rs watch {g}",
+		"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d +0.02",
+		"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d -0.02"
+	},
+	"custom/wl-gammarelay-applet": {
+		"format": "❍ {}",
+		"exec": "wl-gammarelay-rs watch {t}",
+		"on-click": "~/.local/bin/wl-gammarelay-applet",
+		"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+		"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
 	},
 	"custom/updates": {
 		"format": " {}",
 		"tooltip-format": "{}",
 		"escape": true,
 		"return-type": "json",
-		"exec": "~/.bin/updates",
-		"restart-interval": 300,
-		"on-click": "alacritty -e ~/.bin/update_prompt",
+		"exec": "~/.local/bin/updates",
+		"restart-interval": 600,
+		"on-click": "pypr toggle updates && hyprctl dispatch bringactivetotop",
 		"tooltip": false
 	},
 	"custom/filemanager": {
@@ -83,12 +108,12 @@
 	},
 	"custom/calculator": {
 		"format": "",
-		"on-click": "rofi -show calc",
+		"on-click": "wofi-calc",
 		"tooltip": false
 	},
 	"custom/appmenu": {
 		"format": " ",
-		"on-click": "rofi -show drun",
+		"on-click": "wofi --show drun",
 		"tooltip": false
 	},
 	"custom/exit": {
@@ -122,15 +147,15 @@
 	},
 	"disk": {
 		"interval": 30,
-		"format": "   {percentage_used}% ",
+		"format": "   {percentage_used}% ",
 		"path": "/"
 	},
 	"network": {
 		"format": "{ifname}",
 		"format-wifi": "   {signalStrength}%",
-		"format-ethernet": "  {ipaddr}",
-		"format-disconnected": "", //An empty format will hide the module.
-		"tooltip-format": " {ifname} via {gwaddri}",
+		"format-ethernet": "󰈀  {ipaddr}",
+		"format-disconnected": "",
+		"tooltip-format": "󰈀 {ifname} via {gwaddri}",
 		"tooltip-format-wifi": "   {essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
 		"tooltip-format-disconnected": "Disconnected",
@@ -138,16 +163,14 @@
 	},
 	"battery": {
 		"states": {
-			// "good": 95,
+			"good": 95,
 			"warning": 30,
 			"critical": 15
 		},
 		"format": "{icon}   {capacity}%",
-		"format-charging": "  {capacity}%",
+		"format-charging": "  {capacity}%",
 		"format-plugged": "  {capacity}%",
 		"format-alt": "{icon}  {time}",
-		// "format-good": "", // An empty format will hide the module
-		// "format-full": "",
 		"format-icons": [
 			" ",
 			" ",
@@ -157,7 +180,6 @@
 		]
 	},
 	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
 		"format": "{icon} {volume}%",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": " {icon} {format_source}",
@@ -166,8 +188,8 @@
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "",
-			"headset": "",
+			"hands-free": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
