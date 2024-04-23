@@ -70,6 +70,10 @@ paru -S --noconfirm --needed archlinux-tweak-tool-git ani-cli c-lolcat kloak-git
 category "Install fonts from the AUR"
 paru -S --noconfirm --needed 3270-fonts ttf-envy-code-r ttf-victor-mono
 
+ln -s /usr/share/mpv/fonts $HOME/.config/mpv/
+ln -s /usr/share/mpv/scripts/uosc $HOME/.config/mpv/scripts/
+ln -s /usr/share/mpv/script-opts/uosc.conf $HOME/.config/mpv/script-opts/
+
 # Block add domains
 hblock
 
