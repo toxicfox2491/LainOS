@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+# WARNING: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
 
 function echo_title() { echo -ne "\033[1;44;37m${*}\033[0m\n"; }
 function echo_caption() { echo -ne "\033[0;1;44m${*}\033[0m\n"; }
@@ -17,6 +17,7 @@ function echo_prompt() { echo -ne "\033[0;36m${*}\033[0m "; }
 
 function message() {
 	tput setaf "$1"
+	echo
 	echo "------------------------------------------------------------"
 	echo "| > $2"
 	echo "------------------------------------------------------------"
@@ -30,41 +31,37 @@ function category() {
 
 function install() {
 	if pacman -Qi "$1" &>/dev/null; then
-		message 2 "The package $1 is already installed"
+		tput setaf 2
+		echo "The package $1 is already installed"
 	else
-		message 3 "Installing package $1"
-		sleep 2s
-		pacman -S --noconfirm --needed $1
+		pacman -S --noconfirm --needed "$1"
 	fi
 }
 
 function install_list() {
 	count=0
 	list=("$@")
-	n=${#list[@]}
 	for name in "${list[@]}"; do
-		count=$((count + 1))
-		tput setaf 3 # Orange
-		echo "$count/$n: $name"
+		((count++))
+		message 3 "$count/${#list[@]}: $name"
 		tput sgr0
 		install "$name"
 	done
 }
 
 function help() {
-	echo_caption "-- $NAME Version: $VERSION --"
 	echo
 	echo_p "Description :"
 	echo_s "\tThis script helps you to customize a fresh Arch Linux installation to convert it into LainOS. Manual intervention could be needed.\n"
-	echo
-	echo "-------------"
 	echo_p "Arguments :"
 	echo_s "-h/--help"
 	echo_info "\thelp command"
+	echo_s "-g"
+	echo_info "\tGrub"
+	echo_s "-p"
+	echo_info "\tPlymouth"
 	echo_s "-tf"
 	echo_info "\tTest styles of terminal font"
-	echo_s "-tg"
-	echo_info "\tTest extra glyphs"
 }
 
 function grub_theme() {
@@ -117,17 +114,6 @@ function test_font() {
 	echo -e '\e[8minvisible\e[28m <- invisible (but copy-pasteable)'
 	echo -e '\e[9mstrikethrough\e[29m'
 	echo -e '\e[53moverline (new in 0.52)\e[55m'
-	echo
-}
-
-function test_glyphs() {
-	message 10 "Testing accela and copland glyphs"
-	from=F3FE to=F3FF
-	from=$(printf '%d' "0x$from") to=$(printf '%d' "0x$to")
-	while test "$from" -le "$to"; do
-		num=$(printf '%04x' "$from")
-		echo -en "\u$num  "
-		from=$((from + 1))
-	done
+	echo -e "LainOS special glyphs: \uf3fe  -  \uf3ff"
 	echo
 }

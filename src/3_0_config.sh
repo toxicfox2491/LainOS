@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+# WARNING: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
 
 source functions.sh
 
@@ -34,14 +34,14 @@ plymouth_hellonavi
 
 category "Creating new user"
 
-read -p "Enter the name of the new user: " user
+read -rp "Enter the name of the new user: " user
 useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
 echo_s "Now type your new password"
 passwd "$user"
 
 echo_p "Don't forget to add the new user to the wheel group!"
 echo_s "Uncomment the line: %wheel ALL=(ALL) ALL"
-read
+read -r
 EDITOR=nvim visudo
 
 # Running the last script as the recently created user #########################
@@ -51,7 +51,7 @@ category "Script for user $user"
 echo_p "Finish the installation as $user"
 echo_s "Execute ./3_1_user.sh"
 
-su $user
+su "$user"
 
 # All finished! ################################################################
 

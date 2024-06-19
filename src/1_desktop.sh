@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+# WARNING: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
 
 source functions.sh
 
@@ -12,58 +12,33 @@ pacman -S --noconfirm --needed pacman-contrib
 cp ../etc/pacman.conf /etc/
 cp -r ../etc/pacman.d/ /etc/
 
-# ArcoLinux keys
-#Erik key
-pacman-key --recv-keys 74F5DE85A506BF64
-pacman-key --lsign-key 74F5DE85A506BF64
-
-#Marco key
-pacman-key --recv-keys F1ABB772CE9F7FC0
-pacman-key --lsign-key F1ABB772CE9F7FC0
-
-#John key
-pacman-key --recv-keys 4B1B49F7186D8731
-pacman-key --lsign-key 4B1B49F7186D8731
-
-#Stephen key
-pacman-key --recv-keys 02D507C6EFB8CEAA
-pacman-key --lsign-key 02D507C6EFB8CEAA
-
-#Brad Heffernan
-pacman-key --recv-keys 18064BF445855549
-pacman-key --lsign-key 18064BF445855549
-
-#Raniel Laguna
-pacman-key --recv-keys 7EC1A5550718AB89
-pacman-key --lsign-key 7EC1A5550718AB89
-
 message 6 "Ranking mirrors"
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
-rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
+rankmirrors -n 10 /etc/pacman.d/mirrorlist.backup >/etc/pacman.d/mirrorlist
 
 pacman -Sy
+
 # Desktop environment ##########################################################
 
 message 6 "Installation of the core software"
 message 7 "Openbox / X.org"
-# Check what video driver you need and
+# NOTE: Check what video driver you need, add it and
 # check for extra configurations
-list=( #xf86-video-amdgpu
-	mesa openbox plymouth sddm xorg-server gnome-keyring zsh)
-install_list "${list[@]}"
+
+# xf86-video-amdgpu
+install_list linux-firmware mesa openbox plymouth sddm xorg-server \
+	gnome-keyring qt5ct qt6ct zsh
 
 echo_s "Enabling sddm as display manager"
 systemctl enable sddm.service
 
 message 14 "Hyprland / Wayland"
-list=(hyprland hyprpicker wofi grimblast-git nwg-look-bin
-	cliphist nwg-look-bin waybar swaybg
-	dunst eww-wayland swayidle swaylock-effects-git swaylockd
-	sway-audio-idle-inhibit-git bc pamixer light-git papirus-icon-theme
-	cava xdg-desktop-portal-wlr grim slurp wl-clipboard socat swappy
-	hyprpicker nm-connection-editor dictd wl-clip-persist-git)
-install_list "${list[@]}"
+install_list hypr{idle,land,lock,picker} wofi \
+	nwg-look-bin waybar swaybg dunst \
+	xdg-desktop-portal-wlr grim slurp \
+	cliphist wl-clipboard wl-clip-persist-git \
+	pyprland pamixer swappy cpio
 
 # Sound ########################################################################
 
@@ -76,18 +51,19 @@ echo_s "2.  Pipewire"
 echo
 
 list=()
-read CHOICE
+read -r CHOICE
 case $CHOICE in
 0) echo_p "We did nothing as per your request\n" ;;
-1) list=(pulseaudio pulseaudio-alsa pavucontrol
-	alsa-firmware alsa-lib alsa-plugins alsa-utils
-	gstreamer gst-plugins-good gst-plugins-bad gst-plugins-base
-	gst-plugins-ugly playerctl volumeicon) ;;
-2) list=(pipewire pipewire-pulse pipewire-alsa
-	pipewire-jack pipewire-zeroconf pavucontrol
-	alsa-utils alsa-plugins alsa-lib alsa-firmware
-	gstreamer gst-plugins-good gst-plugins-bad
-	gst-plugins-base gst-plugins-volumeicon playerctl) ;;
+1) list=(
+	pulseaudio{,-alsa}
+	pavucontrol alsa-{firmware,lib,plugins,utils}
+	gstreamer gst-plugins-{base,bad,good,ugly} playerctl volumeicon
+) ;;
+2) list=(
+	pipewire{,-pulse,-alsa,-jack,-zeroconf}
+	pavucontrol alsa-{firmware,lib,plugins,utils}
+	gstreamer gst-plugins-{base,bad,good,ugly} playerctl volumeicon
+) ;;
 *) echo_danger ">:v\n" ;;
 esac
 install_list "${list[@]}"
@@ -95,8 +71,7 @@ install_list "${list[@]}"
 # Bluetooth ####################################################################
 
 message 6 "Installation of bluetooth software"
-list=(pulseaudio-bluetooth bluez bluez-libs bluez-utils blueberry)
-install_list "${list[@]}"
+install_list pulseaudio-bluetooth bluez{,-libs,-utils} blueberry
 
 echo_s "Enabling bluetooth service"
 
@@ -106,9 +81,8 @@ systemctl enable --now bluetooth.service
 # Printers #####################################################################
 
 message 6 "Installation of printer software"
-list=(cups cups-pdf ghostscript gsfonts gutenprint gtk3-print-backends
-	libcups system-config-printer)
-install_list "${list[@]}"
+install_list cups cups-pdf ghostscript gsfonts gutenprint gtk3-print-backends \
+	libcups system-config-printer
 
 echo_s "Enabling cups service"
 
@@ -117,8 +91,7 @@ systemctl enable --now cups.service
 # Samba ########################################################################
 
 message 6 "Installation of samba software"
-list=(samba cifs-utils gvfs-smbn)
-install_list "${list[@]}"
+install_list samba cifs-utils gvfs-smbn
 
 # echo_s "Give your username for samba"
 #
@@ -139,18 +112,20 @@ list=(tlp)
 
 echo -e "\n\n"
 read -p "Is this device a laptop? [y/N] : " -n 1 -r
-[[ $REPLY =~ ^[Yy]$ ]] && echo && install_list "${list[@]}" &&
-	echo_s "Enabling services" && systemctl enable tlp.service &&
-	echo_s "Software has been installed" ||
-	echo_s "\nLaptop pRograms are not being installed"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	echo
+	install_list "${list[@]}"
+	echo "Enabling services"
+	systemctl enable tlp.service
+	echo "Software has been installed"
+else
+	echo -e "\nLaptop programs are not being installed"
+fi
 
 # Network ######################################################################
 
 message 6 "Installation of network software"
-
-list=(avahi nss-mdns gvfs-smb)
-
-install_list "${list[@]}"
+install_list avahi nss-mdns gvfs-smb
 
 echo_s "Enabling services"
 systemctl enable avahi-daemon.service

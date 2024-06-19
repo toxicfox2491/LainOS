@@ -17,7 +17,7 @@
 #
 # ---------------------------------------------------------------------------
 
-# CAUTION: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
+# WARNING: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
 
 if [ "${PWD##*/}" != "src" ]; then
 	function echo_error() { echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }
@@ -36,15 +36,12 @@ else
 			./3_0_config.sh
 		fi
 	elif [ $# -eq 1 ]; then
-		echo 1: "$1"
 		if [[ "$1" = "-g" ]]; then
 			grub_theme
 		elif [[ "$1" = "-p" ]]; then
 			plymouth_hellonavi
 		elif [[ "$1" = "-tf" ]]; then
 			test_font
-		elif [[ "$1" = "-tg" ]]; then
-			test_glyphs
 		else
 			help
 		fi
