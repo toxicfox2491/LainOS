@@ -1,3 +1,14 @@
+<!--toc:start-->
+- [Objective](#objective)
+- [Openbox](#openbox)
+- [Hyprland](#hyprland)
+- [More projects](#more-projects)
+  - [LainOS ricer for MX Linux fluxbox](#lainos-ricer-for-mx-linux-fluxbox)
+  - [PDL](#pdl)
+  - [PDLP](#pdlp)
+- [Social media](#social-media)
+<!--toc:end-->
+
 ![LainOS](images/logo.png)
 
 ![Linux](https://img.shields.io/badge/-Linux-grey?logo=linux)
@@ -24,17 +35,17 @@ In support of the *Arch way* to install Arch Linux here are 2 [install guides](i
 
 Other projects from the LainOS team
 
-### [LainOS ricer for MX Linux fluxbox](https://codeberg.org/LainOS/LainOS-ricer)
+### LainOS ricer for MX Linux fluxbox
 
-Ricer script to customize MX Linux fluxbox to LainOS.
+[Ricer script](https://codeberg.org/LainOS/LainOS-ricer) to customize MX Linux fluxbox to LainOS.
 
-### [PDL](https://github.com/ashk123/PDL)
+### PDL
 
-PDL is a small tool for downloading and installing packages. 
+[PDL](https://github.com/ashk123/PDL) is a small tool for downloading and installing packages.
 
-### [PDLP](https://github.com/ashk123/PDLP)
+### PDLP
 
-PDL packages from users 
+[PDL Packages](https://github.com/ashk123/PDLP) from users.
 
 ## Social media
 

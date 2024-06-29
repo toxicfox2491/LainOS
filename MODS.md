@@ -1,5 +1,19 @@
 # Modifications
 
+<!--toc:start-->
+- [Modifications](#modifications)
+  - [GRUB](#grub)
+  - [Plymouth](#plymouth)
+  - [SDDM](#sddm)
+  - [Window Manager](#window-manager)
+    - [Openbox](#openbox)
+    - [Hyprland](#hyprland)
+    - [General](#general)
+  - [Config files](#config-files)
+  - [Terminal](#terminal)
+  - [Video player](#video-player)
+<!--toc:end-->
+
 List of changes made on the rice.
 
 ## GRUB
@@ -8,7 +22,7 @@ Custom GRUB theme located on `assets/grub/themes`, retro style.
 
 ## Plymouth
 
-Custom Plymouth theme located on `usr/share/lymouth/themes`, based on `arch-logo-new` theme from AUR. It allows to have a prompt for the  LUKS password if you encrypted your disk, the theme [`hellonavi`](https://github.com/yi78/hellonavi) does not.
+Custom Plymouth theme located on `usr/share/lymouth/themes`, based on `arch-logo-new` theme from the AUR. It allows to have a prompt for the LUKS password if you encrypted your disk, the theme [`hellonavi`](https://github.com/yi78/hellonavi) does not.
 
 ## SDDM
 
@@ -24,7 +38,7 @@ There is a drop-down terminal, press `F10`.
 
 ### Hyprland
 
-The alternative Wayland WM is `Hyprland` and it uses the `eww` bar. All cool kids are using it.
+The alternative Wayland WM is `Hyprland` and it uses waybar. All cool kids are using it.
 
 ### General
 
