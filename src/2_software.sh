@@ -33,7 +33,7 @@ category Graphics
 install_list gimp inkscape loupe
 
 category Multimedia
-install_list lollypop mpv snapshot vlc
+install_list lollypop mpv{,-mpris} snapshot vlc
 
 category Hacking
 # kloak & zenmap on 3_1_user.sh script
