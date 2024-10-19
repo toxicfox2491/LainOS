@@ -6,9 +6,9 @@ source functions.sh
 
 # User applications ############################################################
 
-category Android
+# category Android
 # universal-android-debloater (AUR)
-install_list android-tools gvfs-gphoto2 gvfs-mtp mtpfs
+# install_list android-tools gvfs-gphoto2 gvfs-mtp mtpfs
 
 category Development
 # gnome-boxes meld
@@ -24,44 +24,44 @@ install_list gnome-font-viewer otf-cascadia-code terminus-font ttc-iosevka \
 	noto-fonts-{cjk,emoji} \
 	ttf-{agave,droid,nerd-fonts-symbols,fira-code,hack,inconsolata}
 
-category Games
+# category Games
 # 0ad steam
-install_list supertux supertuxkart
+# install_list supertux supertuxkart
 
-category Graphics
+# category Graphics
 # scour
-install_list gimp inkscape loupe
+# install_list gimp inkscape loupe
 
 category Multimedia
 install_list lollypop mpv{,-mpris} snapshot vlc
 
-category Hacking
+# category Hacking
 # kloak & zenmap on 3_1_user.sh script
-install_list bettercap nmap sqlmap wireshark-qt kismet wifite metasploit hashcat
+# install_list bettercap nmap sqlmap wireshark-qt kismet wifite metasploit hashcat
 
 category Internet
 # deluge deluge-gtk librewolf
-install_list firefox
+install_list firefox-developer-edition qbittorrent
 
 category Communication
-install_list discord element-desktop telegram-desktop thunderbird
+install_list vesktop
 
-category Office
-install_list evince libreoffice-fresh
+# category Office
+# install_list evince libreoffice-fresh
 
-category Privacy/Security
+#category Privacy/Security
 # Librewolf, gpa, and Tor on 3_1_user.sh script
-install_list firejail gufw hblock keepassxc macchanger
+#install_list firejail gufw hblock keepassxc macchanger
 
 category Terminal utilities
-install_list alacritty asciinema bat broot btop chafa curl duf dust eza fastfetch \
+install_list kitty asciinema bat broot btop chafa curl duf dust eza fastfetch \
 	fd ffmpeg fzf htop man-db perl-{image-exiftool,rename} procs rclone ripgrep \
 	rsync scrot sqlite tldr tmux vnstat wget xdg-user-dirs xsel yt-dlp zoxide
 
 systemctl enable --now vnstat
 
-category Terminal games
-install_list asciiquarium cmatrix cowsay figlet sl
+# category Terminal games
+# install_list asciiquarium cmatrix cowsay figlet sl
 
 category Themes
 install_list breeze breeze-gtk
@@ -87,5 +87,5 @@ category ArcoLinux
 # arcolinux-local-xfce4-git
 # arcolinux-bin-git
 # archlinux-logout-git
-install_list xfce4-{clipman-plugin,power-manager,screenshooter,settings,taskmanager} \
-	thunar{,-archive-plugin,-volman}
+# install_list xfce4-{clipman-plugin,power-manager,screenshooter,settings,taskmanager} \
+#	thunar{,-archive-plugin,-volman}
