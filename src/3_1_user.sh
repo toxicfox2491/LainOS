@@ -11,22 +11,6 @@ mkdir -p "$HOME"/Pictures/Screenshots
 # For urxvt
 xrdb -load "$HOME"/.Xresources
 
-category Neovim
-echo_p "Install some popular Neovim configuration stacks"
-
-read -p "Do you want to install Neovim distributions? [y/N] : " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-	echo
-	echo_p "Installing kickstart"
-	git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME"/.config/kickstart
-	echo_p "Installing LazyVim"
-	git clone https://github.com/LazyVim/starter "$HOME"/.config/LazyVim
-	echo_p "Copying some extra files for LazyVim"
-	cp -r ../assets/LazyVim/lua "$HOME"/.config/LazyVim
-	echo_p "Installing AstroNvim"
-	git clone --depth 1 https://github.com/AstroNvim/AstroNvim "$HOME"/.config/AstroNvim
-fi
-
 category oh-my-zsh
 echo_p "Install some popular plugins for oh-my-zsh"
 
