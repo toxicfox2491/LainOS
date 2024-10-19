@@ -20,23 +20,23 @@
 #
 # In order to be able to use the declared aliases inside the declared functions
 # the aliases MUST be declared before the function, so declare functions after aliases.
-alias bench='wget -qO- bench.sh | bash'
+# alias bench='wget -qO- bench.sh | bash'
 #[ -f "/usr/local/bin/lolcat" ] || [ -f "/usr/bin/lolcat" ] && alias cat='lolcat'
 
-alias c='clear'
-alias cn='c; n'
-alias cu='c; u'
-alias cun='c; u; n'
-alias cum='cun'
-alias cl='c; pwd; ls'
-alias cls='c; pwd; ls'
-alias clt='c; lt'
-alias clat='c; lta'
-alias clta='c; lta'
-alias cll='c; pwd; ll'
-alias cla='c; pwd; la'
-alias clal='c; pwd; lla'
-alias clla='c; pwd; lla'
+# alias c='clear'
+# alias cn='c; n'
+# alias cu='c; u'
+# alias cun='c; u; n'
+# alias cum='cun'
+# alias cl='c; pwd; ls'
+# alias cls='c; pwd; ls'
+# alias clt='c; lt'
+# alias clat='c; lta'
+# alias clta='c; lta'
+# alias cll='c; pwd; ll'
+# alias cla='c; pwd; la'
+# alias clal='c; pwd; lla'
+# alias clla='c; pwd; lla'
 
 alias duf='duf --hide-fs squashfs' # Exclude snaps
 alias e='extract' # extract from oh my zsh
@@ -65,9 +65,9 @@ alias md='mkdir -p'
 alias mkdir='mkdir -p -v'
 alias myip="echo $(ip a | grep 192.168.1. | awk '{print $2}' | rev | cut -c 4- | rev) | llc"
 alias ms='mpv --shuffle' # For playlists
-alias n='neofetch'
+# alias n='neofetch'
 [ -x "$(command -v fastfetch)" ] && alias neofetch='fastfetch'
-alias nano='v'
+# alias nano='v'
 alias o='xdg-open'
 alias of='onefetch'
 alias p3='python3'
@@ -82,9 +82,9 @@ alias un='u; echo; n'
 alias um='un'
 alias usb='ls /dev/tty*; lsusb'
 alias ut='uptime | llc'
-alias v='nvim-lazy' # See $HOME/.config/nvim/switcher.conf file
-alias v.='nvim-lazy .'
-alias vm='nvim-lazy main.c'
+# alias v='nvim-lazy' # See $HOME/.config/nvim/switcher.conf file
+# alias v.='nvim-lazy .'
+# alias vm='nvim-lazy main.c'
 alias wcl='wc -l | figlet | llc'
 alias wt='curl wttr.in'
 alias x='chmod +x'
