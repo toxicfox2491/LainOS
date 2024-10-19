@@ -42,7 +42,7 @@ passwd "$user"
 echo_p "Don't forget to add the new user to the wheel group!"
 echo_s "Uncomment the line: %wheel ALL=(ALL) ALL"
 read -r
-EDITOR=nvim visudo
+EDITOR=nano
 
 # Running the last script as the recently created user #########################
 
