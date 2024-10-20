@@ -43,7 +43,7 @@ cd wl-gammarelay-applet || return
 cargo build --release
 ln -s "$(pwd)"/target/release/wl-gammarelay-applet ~/.local/bin/wl-gammarelay-applet
 
-category "Installing paru"
+category "Installing yay"
 
 # Install paru
 # not installing paru!!
@@ -58,7 +58,7 @@ category "Install packages from the AUR"
 yay -S --noconfirm --needed c-lolcat gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} \
 	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
-	xdg-ninja zenmap
+	xdg-ninja zenmap hyfetch
 
 category "Install fonts from the AUR"
 yay -S --noconfirm --needed 3270-fonts ttf-{agave,envy-code-r,victor-mono}
