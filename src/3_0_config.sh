@@ -37,7 +37,7 @@ plymouth_hellonavi
 # but come on! if you setup a fresh install of arch I'd assume you'd do the bare minimum
 # of setting up a user already
 
-# category "Creating new user"
+category "Creating new user"
 read -rp "Enter the name of your user account: " user
 # useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
 # echo_s "Now type your new password"
