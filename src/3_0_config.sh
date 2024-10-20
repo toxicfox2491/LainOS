@@ -8,14 +8,14 @@ source functions.sh
 
 category "Global config files"
 
-echo_p "Copying config files from ./LainOS-ricer-arch/etc/ to /etc/"
+echo_p "Copying config files from ./LainOS/etc/ to /etc/"
 cp -r ../etc/* /etc
 
 # Files used on LainOS #########################################################
 
 category "Files for the system (/usr)"
 
-echo_p "Copying LainOS files to /usr/share"
+echo_p "Copying config files from ./LainOS/usr/ to /usr/share"
 cp -r ../usr/* /usr
 
 # Cursor theme by StarLabs
