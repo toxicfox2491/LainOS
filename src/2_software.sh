@@ -71,10 +71,11 @@ install_list cabextract file-roller unace unrar zip unzip sharutils uudeview arj
 
 category Desktop utilities
 # onthespot-git spicetify-cli dialect
+# obmenu-generator perl-linux-desktopfiles : gonna make these install via yay (Idek if they are really needed)
 install_list arandr baobab dconf-editor gmrun gsimplecal gtk2-perl gtk-engine-murrine \
 	imagemagick lxappearance lxappearance-obconf lxrandr nitrogen obconf \
-	obmenu-generator perl-linux-desktopfiles picom playerctl rofi rofi-calc tint2 \
-	variety xorg-xbacklight xorg-xkill xorg-xrdb
+	variety xorg-xbacklight picom playerctl rofi rofi-calc tint2 \
+	xorg-xkill xorg-xrdb
 
 # ArcoLinux ####################################################################
 
