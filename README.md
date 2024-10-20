@@ -1,13 +1,5 @@
-<!--toc:start-->
-- [Objective](#objective)
-- [Openbox](#openbox)
-- [Hyprland](#hyprland)
-- [More projects](#more-projects)
-  - [LainOS ricer for MX Linux fluxbox](#lainos-ricer-for-mx-linux-fluxbox)
-  - [PDL](#pdl)
-  - [PDLP](#pdlp)
-- [Social media](#social-media)
-<!--toc:end-->
+## this is a fork/modified version of the [Lain-OS-ricer-Arch](https://codeberg.org/LainOS/LainOS-ricer-arch)
+
 
 ![LainOS](images/logo.png)
 
@@ -30,6 +22,17 @@ In support of the *Arch way* to install Arch Linux here are 2 [install guides](i
 ## Hyprland
 
 ![LainOS Hyprland](images/Hyprland.jpg)
+
+<!--toc:start-->
+- [Objective](#objective)
+- [Openbox](#openbox)
+- [Hyprland](#hyprland)
+- [More projects](#more-projects)
+  - [LainOS ricer for MX Linux fluxbox](#lainos-ricer-for-mx-linux-fluxbox)
+  - [PDL](#pdl)
+  - [PDLP](#pdlp)
+- [Social media](#social-media)
+<!--toc:end-->
 
 ## More projects
 
