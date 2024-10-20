@@ -64,7 +64,7 @@ systemctl enable --now vnstat
 # install_list asciiquarium cmatrix cowsay figlet sl
 
 category Themes
-install_list breeze breeze-gtk sddm-lain-wired-theme
+install_list breeze breeze-gtk
 
 category Unpack
 install_list cabextract file-roller unace unrar zip unzip sharutils uudeview arj p7zip
