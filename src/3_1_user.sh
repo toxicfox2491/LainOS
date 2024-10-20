@@ -46,19 +46,21 @@ ln -s "$(pwd)"/target/release/wl-gammarelay-applet ~/.local/bin/wl-gammarelay-ap
 category "Installing paru"
 
 # Install paru
-git clone https://aur.archlinux.org/paru.git "$HOME"/paru
-cd "$HOME"/paru || return
+# not installing paru!!
+# replaced with yay
+git clone  https://aur.archlinux.org/yay.git "$HOME"/yay
+cd "$HOME"/yay || return
 makepkg -si
 
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
-paru -S --noconfirm --needed ani-cli c-lolcat gpa kloak-git \
+yay -S --noconfirm --needed ani-cli c-lolcat gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} \
 	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap
 
 category "Install fonts from the AUR"
-paru -S --noconfirm --needed 3270-fonts ttf-{agave,envy-code-r,victor-mono}
+yay -S --noconfirm --needed 3270-fonts ttf-{agave,envy-code-r,victor-mono}
 
 ln -s /usr/share/mpv/fonts "$HOME"/.config/mpv/
 ln -s /usr/share/mpv/scripts/uosc "$HOME"/.config/mpv/scripts/
