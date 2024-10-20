@@ -54,7 +54,8 @@ makepkg -si
 
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
-yay -S --noconfirm --needed ani-cli c-lolcat gpa kloak-git \
+# took out ani-cli, if you still want to watch anime I recommend using anipy-cli instead
+yay -S --noconfirm --needed c-lolcat gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} \
 	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap
