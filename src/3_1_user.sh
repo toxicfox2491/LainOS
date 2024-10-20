@@ -58,7 +58,8 @@ category "Install packages from the AUR"
 yay -S --noconfirm --needed c-lolcat gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} \
 	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
-	xdg-ninja zenmap perl-linux-desktopfiles obmenu-generator hyfetch
+	xdg-ninja zenmap perl-linux-desktopfiles obmenu-generator hyfetch \
+ 	pyprland wl-clip-persist-git
 
 category "Install fonts from the AUR"
 yay -S --noconfirm --needed 3270-fonts ttf-{agave,envy-code-r,victor-mono}
