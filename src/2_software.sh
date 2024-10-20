@@ -13,7 +13,7 @@ source functions.sh
 category Development
 # gnome-boxes meld
 install_list archiso base-devel entr gdb git git-delta indent jq lazygit \
-	man-pages neovim nix onefetch python-{pip,pynvim,setuptools,virtualenv} \
+	man-pages nix onefetch python-{pip,pynvim,setuptools,virtualenv} \
 	shellcheck valgrind
 
 category Programming
