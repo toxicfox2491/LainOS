@@ -55,9 +55,10 @@ makepkg -si
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
 # took out ani-cli, if you still want to watch anime I recommend using anipy-cli instead
+# removed tor browser from the list, if you need to use tor I'd imagine you want to install it yourself
 yay -S --noconfirm --needed c-lolcat gpa kloak-git \
 	librewolf-bin mpv-{thumbfast-git,uosc} \
-	sddm-lain-wired-theme tdrop tor-browser wlogout wl-gammarelay-rs \
+	sddm-lain-wired-theme tdrop wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap perl-linux-desktopfiles obmenu-generator hyfetch \
  	pyprland wl-clip-persist-git
 
