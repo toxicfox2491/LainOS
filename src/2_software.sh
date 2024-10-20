@@ -55,7 +55,7 @@ install_list vesktop
 
 category Terminal utilities
 install_list kitty asciinema bat broot btop chafa curl duf dust eza fastfetch \
-	fd ffmpeg fzf htop man-db perl-{image-exiftool,rename} procs rclone ripgrep \
+	fd ffmpeg fzf man-db perl-{image-exiftool,rename} procs rclone ripgrep \
 	rsync scrot sqlite tldr tmux vnstat wget xdg-user-dirs xsel yt-dlp zoxide
 
 systemctl enable --now vnstat
