@@ -32,17 +32,21 @@ plymouth_hellonavi
 
 # Creating a new user ##########################################################
 
-category "Creating new user"
+# honestly I dont know why this wants you to create a new account.
+# I get that this expects you to be on a fresh install
+# but come on! if you setup a fresh install of arch I'd assume you'd do the bare minimum
+# of setting up a user already
 
-read -rp "Enter the name of the new user: " user
-useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
-echo_s "Now type your new password"
-passwd "$user"
+# category "Creating new user"
+read -rp "Enter the name of your user account: " user
+# useradd --create-home --groups sddm,video,wheel --shell /bin/zsh "$user"
+# echo_s "Now type your new password"
+# passwd "$user"
 
-echo_p "Don't forget to add the new user to the wheel group!"
-echo_s "Uncomment the line: %wheel ALL=(ALL) ALL"
-read -r
-EDITOR=nano
+# echo_p "Don't forget to add the new user to the wheel group!"
+# echo_s "Uncomment the line: %wheel ALL=(ALL) ALL"
+# read -r
+# EDITOR=nano
 
 # Running the last script as the recently created user #########################
 
