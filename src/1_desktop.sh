@@ -33,12 +33,13 @@ install_list linux-firmware mesa openbox plymouth sddm xorg-server \
 echo_s "Enabling sddm as display manager"
 systemctl enable sddm.service
 
+# pyprland wl-clip-persist-git moved to yay since pacman cant find them
 message 14 "Hyprland / Wayland"
 install_list hypr{idle,land,lock,picker} wofi \
 	nwg-look-bin waybar swaybg dunst \
 	xdg-desktop-portal-wlr grim slurp \
-	cliphist wl-clipboard wl-clip-persist-git \
-	pyprland pamixer swappy cpio
+	cliphist wl-clipboard pamixer cpio \
+	swappy
 
 # Sound ########################################################################
 
