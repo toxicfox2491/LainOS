@@ -64,7 +64,7 @@ systemctl enable --now vnstat
 # install_list asciiquarium cmatrix cowsay figlet sl
 
 category Themes
-install_list breeze breeze-gtk
+install_list breeze breeze-gtk sddm-lain-wired-theme
 
 category Unpack
 install_list cabextract file-roller unace unrar zip unzip sharutils uudeview arj p7zip
@@ -78,7 +78,7 @@ install_list arandr baobab dconf-editor gmrun gsimplecal gtk2-perl gtk-engine-mu
 
 # ArcoLinux ####################################################################
 
-category ArcoLinux
+# category ArcoLinux
 # arcolinux-openbox-themes-git
 # arcolinux-tint2-themes-git
 # arcolinux-pipemenus-git
