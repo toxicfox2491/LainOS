@@ -10,7 +10,8 @@ pacman -Syyu
 pacman -S --noconfirm --needed pacman-contrib
 
 cp ../etc/pacman.conf /etc/
-cp -r ../etc/pacman.d/ /etc/
+
+# cp -r ../etc/pacman.d/ /etc/ - aparently doesnt exist
 
 message 6 "Ranking mirrors"
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
