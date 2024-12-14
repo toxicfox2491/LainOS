@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.local/share/oh-my-zsh/.oh-my-zsh"
 
 HISTSIZE=-1
 HISTFILESIZE=-1
