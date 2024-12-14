@@ -29,12 +29,25 @@ function category() {
 	message 5 "Installing software for category $1"
 }
 
+# original
+#function install() {
+#	if pacman -Qi "$1" &>/dev/null; then
+#		tput setaf 2
+#		echo "The package $1 is already installed"
+#	else
+#		pacman -S --noconfirm --needed "$1"
+#	fi
+#}
+
+# Im sure changing the entire install to yay will have no issues
+# right? RIGHT!?!?!?!?
+
 function install() {
-	if pacman -Qi "$1" &>/dev/null; then
+	if yay -Qi "$1" &>/dev/null; then
 		tput setaf 2
 		echo "The package $1 is already installed"
 	else
-		pacman -S --noconfirm --needed "$1"
+		yay -S --noconfirm --needed "$1"
 	fi
 }
 
