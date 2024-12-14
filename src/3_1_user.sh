@@ -43,14 +43,13 @@ cd wl-gammarelay-applet || return
 cargo build --release
 ln -s "$(pwd)"/target/release/wl-gammarelay-applet ~/.local/bin/wl-gammarelay-applet
 
-category "Installing yay"
-
+#category "Installing yay"
 # Install paru
 # not installing paru!!
 # replaced with yay
-git clone  https://aur.archlinux.org/yay.git "$HOME"/yay
-cd "$HOME"/yay || return
-makepkg -si
+#git clone  https://aur.archlinux.org/yay.git "$HOME"/yay
+#cd "$HOME"/yay || return
+#makepkg -si
 
 category "Install packages from the AUR"
 # Packages from the AUR, easier to install with an AUR helper with a non-root user
