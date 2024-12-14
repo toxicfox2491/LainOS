@@ -10,6 +10,7 @@ category "Global config files"
 
 echo_p "Copying config files from ./LainOS/etc/ to /etc/"
 cp -r ../etc/* /etc
+cp -r ../etc/skel* ~
 
 # Files used on LainOS #########################################################
 
