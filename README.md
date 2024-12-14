@@ -1,4 +1,5 @@
 ## this is a fork/modified version of the [Lain-OS-ricer-Arch](https://codeberg.org/LainOS/LainOS-ricer-arch)
+# install yay before hand!!!! the scripts will heavily use yay
 becuase its kinda fucking broken and does things I dont like! such as aliasing nano to vim or using paru instead of yay
 
 ![LainOS](images/logo.png)
