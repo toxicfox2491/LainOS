@@ -18,12 +18,6 @@
 # ---------------------------------------------------------------------------
 
 # WARNING: DON'T JUST RUN. OBSERVE, JUDGE, AMUSE AT YOUR OWN PERIL.
-git clone  https://aur.archlinux.org/yay.git "$HOME"/yay
-cd "$HOME"/yay || return
-makepkg -si
-
-su $USER
-
 if [ "${PWD##*/}" != "src" ]; then
 	function echo_error() { echo -ne "\033[0;1;31merror:\033[0;31m\t${*}\033[0m\n"; }
 	echo_error "The working directory must be 'src'."
