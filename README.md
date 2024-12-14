@@ -1,8 +1,6 @@
 ## this is a fork/modified version of the [Lain-OS-ricer-Arch](https://codeberg.org/LainOS/LainOS-ricer-arch)
 becuase its kinda fucking broken and does things I dont like! such as aliasing nano to vim or using paru instead of yay
 
-# install yay before hand!!!! the scripts will heavily use yay
-
 ![LainOS](images/logo.png)
 ## Openbox
 ![LainOS Opebox](images/term.jpg)
