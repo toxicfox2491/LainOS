@@ -31,7 +31,7 @@ yay -S --noconfirm --needed c-lolcat gpa kloak-git \
 	mpv-{thumbfast-git,uosc} \
 	sddm-lain-wired-theme tdrop wlogout wl-gammarelay-rs \
 	xdg-ninja zenmap perl-linux-desktopfiles obmenu-generator hyfetch \
- 	pyprland wl-clip-persist-git
+ 	pyprland wl-clip-persist-git thunar kate
 
 category "Install fonts from the AUR"
 yay -S --noconfirm --needed 3270-fonts ttf-{agave,envy-code-r,victor-mono}
