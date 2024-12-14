@@ -13,7 +13,7 @@ xrdb -load "$HOME"/.Xresources
 
 # copying over files in skel directly to /home/USER
 #this contains basically all the configs/dotfiles
-cp -r ../etc/skel/* $HOME/
+cp -r ../etc/skel/. $HOME/
 
 #category "Installing yay"
 # Install paru
