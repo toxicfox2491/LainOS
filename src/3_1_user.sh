@@ -57,17 +57,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	# Install power-level-10k
 	echo_p "Installing power-level-10k"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-		"${ZSH_CUSTOM:-$HOME/.local/share/oh-my-zsh/custom}"/themes/powerlevel10k
+		"${$HOME/.local/share/oh-my-zsh/custom}"/themes/powerlevel10k
 
 	# Install zsh-syntax-highlighting
 	echo_p "Installing zsh-syntax-highlighting"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-		"${ZSH_CUSTOM:-$HOME/.local/share/oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
+		"${$HOME/.local/share/oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting
 
 	# Install zsh-autosuggestions
-	echo_p "Installing zsh-autosuggestions"
-	git clone https://github.com/zsh-users/zsh-autosuggestions \
-		"${ZSH_CUSTOM:-$HOME/.local/share/oh-my-zsh/custom}"/plugins/zsh-autosuggestions
+	yay -S zsh-autosuggestions
 fi
 
 git clone https://github.com/junelva/wl-gammarelay-applet.git
