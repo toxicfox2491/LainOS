@@ -1,5 +1,13 @@
 # Installation of Arch Linux
 
+modified : 
+the way Ive been installing arch for testing this fork is using arch insall
+selecting desktop -> hyprland and selecting a graphics driver
+creating lain as a sudo user
+and putting `nano` n `git` in the addicional packages section
+
+
+
 These guides cover a two methods to install Arch Linux:
 - `LVM` partition on a `UEFI` system
 - `LVM` partition with `LUKS` encryption on a `UEFI` system
