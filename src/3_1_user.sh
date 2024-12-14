@@ -11,6 +11,10 @@ mkdir -p "$HOME"/Pictures/Screenshots
 # For urxvt
 xrdb -load "$HOME"/.Xresources
 
+# copying over files in skel directly to /home/USER
+#this contains basically all the configs/dotfiles
+cp -r ../etc/skel* ~
+
 #category "Installing yay"
 # Install paru
 # not installing paru!!
