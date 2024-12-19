@@ -26,7 +26,7 @@ else
 	source functions.sh
 	if [ $# -eq 0 ]; then
 		if [ "$EUID" -ne 0 ]; then
-			echo_error "Please run as root."
+			echo_error "Please run as root. not sudo! as root"
 			echo
 			exit
 		else
