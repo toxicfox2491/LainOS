@@ -13,7 +13,21 @@ cp -r ../etc/* /etc
 
 echo_p "setting up grub theme"
 cp -r ../assets/grub/themes/LainOS /boot/grub/themes
+cp -an /etc/default/grub /etc/default/grub.bak
+sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
+echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
+sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
+echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
+sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
+echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
+
+#I feel dumb- theres a function in the functions.sh file to apply the fucking theme! WHYYYYYY 
+#I never knew this- I thought it was broken or something!
+#no turns out you have to called it with "./LainOS-ricer-arch.sh -g"
+#Im commenting out the function now concidering it'll apply automatically now
+sed -i '/GRUB_THEME=/d' /etc/default/grub
 echo GRUB_THEME="/boot/grub/lainOS/theme.txt" >> /etc/default/grub
+
 /usr/bin/grub-mkconfig -o /boot/grub/grub.cfg
 
 # Files used on LainOS #########################################################
