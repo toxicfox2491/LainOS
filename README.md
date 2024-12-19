@@ -1,11 +1,11 @@
 # this is a fork/modified version of the [Lain-OS-ricer-Arch](https://codeberg.org/LainOS/LainOS-ricer-arch)
 
 > [!NOTE]
-> please install yay before you run this!!
-> dont forget run as root and not to just sudo it!
-> this is a fork that may not work in the future, it works as of december 19th 2024
-> this fork exists becuase the original (at the time of writting this) is just fucking broken
-> and does things such as aliasing nano to vim! I dont like this
+> please install yay before you run this!! \n
+> dont forget run as root and not to just sudo it! \n
+> this is a fork that may not work in the future, it works as of december 19th 2024 \n
+> this fork exists becuase the original (at the time of writting this) is just fucking broken \n
+> and does things such as aliasing nano to vim! I dont like this \n
 
 ![LainOS](images/logo.png)
 ## Openbox
