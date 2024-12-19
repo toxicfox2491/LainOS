@@ -10,7 +10,11 @@ category "Global config files"
 
 echo_p "Copying config files from ./LainOS/etc/ to /etc/"
 cp -r ../etc/* /etc
+
+echo_p "setting up grub theme"
 cp -r ../assets/grub/themes/LainOS /boot/grub/themes
+echo GRUB_THEME="/boot/grub/lainOS/theme.txt" >> /etc/default/grub
+/usr/bin/grub-mkconfig -o /boot/grub/grub.cfg
 
 # Files used on LainOS #########################################################
 
