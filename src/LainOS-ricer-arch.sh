@@ -35,9 +35,10 @@ else
 			./3_0_config.sh
 		fi
 	elif [ $# -eq 1 ]; then
-		if [[ "$1" = "-g" ]]; then
-			grub_theme
-		elif [[ "$1" = "-p" ]]; then
+#		if [[ "$1" = "-g" ]]; then
+#			grub_theme
+#I genuinely didnt know I had to runn -g to apply the theme, its done automatically now
+		if [[ "$1" = "-p" ]]; then
 			plymouth_hellonavi
 		elif [[ "$1" = "-tf" ]]; then
 			test_font
