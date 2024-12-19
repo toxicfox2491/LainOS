@@ -77,26 +77,26 @@ function help() {
 	echo_info "\tTest styles of terminal font"
 }
 
-function grub_theme() {
+#function grub_theme() {
 	# Run as root
 	# sudo ./LainOS-ricer-arch.sh -g
-	cp -an /etc/default/grub /etc/default/grub.bak
-	mkdir -pv /boot/grub/themes/LainOS
-	cp -a ../assets/grub/themes/LainOS/* /boot/grub/themes/LainOS
+#	cp -an /etc/default/grub /etc/default/grub.bak
+#	mkdir -pv /boot/grub/themes/LainOS
+#	cp -a ../assets/grub/themes/LainOS/* /boot/grub/themes/LainOS
 	# remove default grub style if any
-	sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
-	echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
+#	sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
+#	echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
 	# remove default timeout if any
-	sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
-	echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
+#	sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
+#	echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
 	# remove theme if any
-	sed -i '/GRUB_THEME=/d' /etc/default/grub
-	echo "GRUB_THEME=\"/boot/grub/themes/LainOS/theme.txt\"" >>/etc/default/grub
+#	sed -i '/GRUB_THEME=/d' /etc/default/grub
+#	echo "GRUB_THEME=\"/boot/grub/themes/LainOS/theme.txt\"" >>/etc/default/grub
 	# remove default timeout if any
-	sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
-	echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
-	grub-mkconfig -o /boot/grub/grub.cfg
-}
+#	sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
+#	echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
+#	grub-mkconfig -o /boot/grub/grub.cfg
+#}
 
 function plymouth_hellonavi() {
 	# Run as root
