@@ -12,14 +12,14 @@ echo_p "Copying config files from ./LainOS/etc/ to /etc/"
 cp -r ../etc/* /etc
 
 echo_p "setting up grub theme"
-cp -r ../assets/grub/themes/LainOS /boot/grub/themes
-cp -an /etc/default/grub /etc/default/grub.bak
-sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
-echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
-sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
-echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
-sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
-echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
+#cp -r ../assets/grub/themes/LainOS /boot/grub/themes
+#cp -an /etc/default/grub /etc/default/grub.bak
+#sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub
+#echo 'GRUB_TIMEOUT_STYLE="menu"' >>/etc/default/grub
+#sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub
+#echo 'GRUB_TIMEOUT="13"' >>/etc/default/grub
+#sed -i '/GRUB_GFXMODE=/d' /etc/default/grub
+#echo 'GRUB_GFXMODE="auto"' >>/etc/default/grub
 
 #I feel dumb- theres a function in the functions.sh file to apply the fucking theme! WHYYYYYY 
 #I never knew this- I thought it was broken or something!
